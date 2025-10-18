@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐私政策 - Chrono</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            color: #1d1d1f;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #1d1d1f;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            color: #1d1d1f;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #6e6e73;
+        }
+
+        ul {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #6e6e73;
+        }
+
+        .last-updated {
+            color: #86868b;
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            color: #007AFF;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .language-switcher select {
+            background: white;
+            border: 2px solid #007AFF;
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #1d1d1f;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .language-switcher select:hover {
+            background: #007AFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <select id="languageSelect" onchange="switchLanguage()">
+            <option value="zh">中文</option>
+            <option value="en">English</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <h1 data-zh="隐私政策" data-en="Privacy Policy">隐私政策</h1>
+        <p class="last-updated" data-zh="最后更新日期：2025年10月17日" data-en="Last updated: October 17, 2025">最后更新日期：2025年10月17日</p>
+
+        <h2 data-zh="概述" data-en="Overview">概述</h2>
+        <p data-zh="欢迎使用 Chrono。我们非常重视您的隐私。本隐私政策说明了我们如何收集、使用和保护您的信息。" data-en="Welcome to Chrono. We take your privacy seriously. This privacy policy explains how we collect, use, and protect your information.">欢迎使用 Chrono。我们非常重视您的隐私。本隐私政策说明了我们如何收集、使用和保护您的信息。</p>
+
+        <h2 data-zh="信息收集" data-en="Information Collection">信息收集</h2>
+        <p data-zh="Chrono 致力于保护您的隐私。我们的应用：" data-en="Chrono is committed to protecting your privacy. Our app:">Chrono 致力于保护您的隐私。我们的应用：</p>
+        <ul>
+            <li data-zh="<strong>不收集个人信息</strong>：我们不会收集、存储或传输您的任何个人身份信息" data-en="<strong>No personal information collection</strong>: We do not collect, store, or transmit any personally identifiable information"><strong>不收集个人信息</strong>：我们不会收集、存储或传输您的任何个人身份信息</li>
+            <li data-zh="<strong>本地数据存储</strong>：所有任务、日程和设置数据都存储在您的设备本地" data-en="<strong>Local data storage</strong>: All tasks, schedules, and settings data are stored locally on your device"><strong>本地数据存储</strong>：所有任务、日程和设置数据都存储在您的设备本地</li>
+            <li data-zh="<strong>不使用第三方分析</strong>：我们不使用任何第三方分析或追踪服务" data-en="<strong>No third-party analytics</strong>: We do not use any third-party analytics or tracking services"><strong>不使用第三方分析</strong>：我们不使用任何第三方分析或追踪服务</li>
+            <li data-zh="<strong>不投放广告</strong>：Chrono 完全无广告" data-en="<strong>No advertising</strong>: Chrono is completely ad-free"><strong>不投放广告</strong>：Chrono 完全无广告</li>
+        </ul>
+
+        <h2 data-zh="日历和提醒事项访问" data-en="Calendar and Reminders Access">日历和提醒事项访问</h2>
+        <p data-zh="当您选择启用日历或提醒事项同步功能时：" data-en="When you choose to enable calendar or reminders sync features:">当您选择启用日历或提醒事项同步功能时：</p>
+        <ul>
+            <li data-zh="应用会请求访问您的 Apple 日历和/或提醒事项的权限" data-en="The app will request permission to access your Apple Calendar and/or Reminders">应用会请求访问您的 Apple 日历和/或提醒事项的权限</li>
+            <li data-zh="这些数据仅用于在应用内显示和管理您的任务" data-en="This data is only used to display and manage your tasks within the app">这些数据仅用于在应用内显示和管理您的任务</li>
+            <li data-zh="所有数据处理都在您的设备本地进行" data-en="All data processing is done locally on your device">所有数据处理都在您的设备本地进行</li>
+            <li data-zh="我们不会将这些数据上传到任何服务器" data-en="We do not upload this data to any servers">我们不会将这些数据上传到任何服务器</li>
+        </ul>
+
+        <h2 data-zh="数据安全" data-en="Data Security">数据安全</h2>
+        <p data-zh="由于所有数据都存储在您的设备本地，数据安全性由 iOS 系统的安全机制保障。我们建议您：" data-en="Since all data is stored locally on your device, data security is ensured by iOS system security mechanisms. We recommend that you:">由于所有数据都存储在您的设备本地，数据安全性由 iOS 系统的安全机制保障。我们建议您：</p>
+        <ul>
+            <li data-zh="保持设备的 iOS 系统为最新版本" data-en="Keep your device's iOS system up to date">保持设备的 iOS 系统为最新版本</li>
+            <li data-zh="使用设备的密码或生物识别锁定功能" data-en="Use your device's password or biometric lock features">使用设备的密码或生物识别锁定功能</li>
+            <li data-zh="定期通过 iCloud 备份您的设备数据" data-en="Regularly backup your device data through iCloud">定期通过 iCloud 备份您的设备数据</li>
+        </ul>
+
+        <h2 data-zh="儿童隐私" data-en="Children's Privacy">儿童隐私</h2>
+        <p data-zh="Chrono 适合所有年龄段的用户使用。我们不会主动收集任何用户的个人信息，包括儿童。" data-en="Chrono is suitable for users of all ages. We do not actively collect personal information from any users, including children.">Chrono 适合所有年龄段的用户使用。我们不会主动收集任何用户的个人信息，包括儿童。</p>
+
+        <h2 data-zh="隐私政策变更" data-en="Privacy Policy Changes">隐私政策变更</h2>
+        <p data-zh="我们可能会不时更新本隐私政策。任何变更都会在此页面上发布，重大变更会在应用内通知您。" data-en="We may update this privacy policy from time to time. Any changes will be posted on this page, and significant changes will be notified within the app.">我们可能会不时更新本隐私政策。任何变更都会在此页面上发布，重大变更会在应用内通知您。</p>
+
+        <h2 data-zh="联系我们" data-en="Contact Us">联系我们</h2>
+        <p data-zh="如果您对本隐私政策有任何疑问或建议，请通过以下方式联系我们：" data-en="If you have any questions or suggestions about this privacy policy, please contact us at:">如果您对本隐私政策有任何疑问或建议，请通过以下方式联系我们：</p>
+        <p>电子邮件：<a href="mailto:chronoapp@163.com" style="color: #007AFF;">chronoapp@163.com</a></p>
+
+        <a href="index.html" class="back-link" data-zh="← 返回首页" data-en="← Back to Home">← 返回首页</a>
+    </div>
+
+    <script>
+        // 语言切换功能
+        function switchLanguage() {
+            const select = document.getElementById('languageSelect');
+            const lang = select.value;
+            
+            // 更新所有带有 data-zh 和 data-en 属性的元素
+            const elements = document.querySelectorAll('[data-zh][data-en]');
+            elements.forEach(element => {
+                if (lang === 'zh') {
+                    element.innerHTML = element.getAttribute('data-zh');
+                } else {
+                    element.innerHTML = element.getAttribute('data-en');
+                }
+            });
+            
+            // 更新页面语言属性
+            document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+            
+            // 保存语言选择
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // 页面加载时检测浏览器语言
+        function detectLanguage() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang) {
+                document.getElementById('languageSelect').value = savedLang;
+                switchLanguage();
+                return;
+            }
+            
+            const browserLang = navigator.language || navigator.userLanguage;
+            const lang = browserLang.startsWith('zh') ? 'zh' : 'en';
+            document.getElementById('languageSelect').value = lang;
+            switchLanguage();
+        }
+
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', detectLanguage);
+    </script>
+</body>
+</html>
+

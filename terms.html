@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用条款 - Chrono</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            color: #1d1d1f;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #1d1d1f;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            color: #1d1d1f;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #6e6e73;
+        }
+
+        ul {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #6e6e73;
+        }
+
+        .last-updated {
+            color: #86868b;
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            color: #007AFF;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .language-switcher select {
+            background: white;
+            border: 2px solid #007AFF;
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #1d1d1f;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .language-switcher select:hover {
+            background: #007AFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <select id="languageSelect" onchange="switchLanguage()">
+            <option value="zh">中文</option>
+            <option value="en">English</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <h1 data-zh="使用条款" data-en="Terms of Use">使用条款</h1>
+        <p class="last-updated" data-zh="最后更新日期：2025年10月17日" data-en="Last updated: October 17, 2025">最后更新日期：2025年10月17日</p>
+
+        <h2 data-zh="接受条款" data-en="Acceptance of Terms">接受条款</h2>
+        <p data-zh="欢迎使用 Chrono！通过下载、安装或使用本应用程序，即表示您同意遵守本使用条款。如果您不同意这些条款，请不要使用本应用。" data-en="Welcome to Chrono! By downloading, installing, or using this application, you agree to comply with these terms of use. If you do not agree to these terms, please do not use this app.">欢迎使用 Chrono！通过下载、安装或使用本应用程序，即表示您同意遵守本使用条款。如果您不同意这些条款，请不要使用本应用。</p>
+
+        <h2 data-zh="许可授权" data-en="License Grant">许可授权</h2>
+        <p data-zh="Chrono 授予您一项有限的、非独占的、不可转让的、可撤销的许可，允许您：" data-en="Chrono grants you a limited, non-exclusive, non-transferable, revocable license to:">Chrono 授予您一项有限的、非独占的、不可转让的、可撤销的许可，允许您：</p>
+        <ul>
+            <li data-zh="在您拥有或控制的 iOS 设备上安装和使用本应用" data-en="Install and use this app on iOS devices you own or control">在您拥有或控制的 iOS 设备上安装和使用本应用</li>
+            <li data-zh="仅用于个人、非商业目的" data-en="For personal, non-commercial purposes only">仅用于个人、非商业目的</li>
+            <li data-zh="按照这些条款和所有适用法律使用本应用" data-en="Use this app in accordance with these terms and all applicable laws">按照这些条款和所有适用法律使用本应用</li>
+        </ul>
+
+        <h2 data-zh="使用限制" data-en="Usage Restrictions">使用限制</h2>
+        <p data-zh="您同意不会：" data-en="You agree not to:">您同意不会：</p>
+        <ul>
+            <li data-zh="复制、修改、改编、翻译或逆向工程本应用的任何部分" data-en="Copy, modify, adapt, translate, or reverse engineer any part of this app">复制、修改、改编、翻译或逆向工程本应用的任何部分</li>
+            <li data-zh="出售、出租、出借或转让本应用" data-en="Sell, rent, lend, or transfer this app">出售、出租、出借或转让本应用</li>
+            <li data-zh="删除或修改应用中的任何版权或所有权声明" data-en="Remove or modify any copyright or ownership notices in the app">删除或修改应用中的任何版权或所有权声明</li>
+            <li data-zh="使用本应用进行任何非法或未经授权的目的" data-en="Use this app for any illegal or unauthorized purposes">使用本应用进行任何非法或未经授权的目的</li>
+            <li data-zh="干扰或破坏本应用或其服务器或网络" data-en="Interfere with or disrupt this app or its servers or networks">干扰或破坏本应用或其服务器或网络</li>
+        </ul>
+
+        <h2 data-zh="知识产权" data-en="Intellectual Property">知识产权</h2>
+        <p data-zh="Chrono 及其所有内容、功能和外观均为版权所有。除非本协议明确授权，否则未经事先书面许可，您不得使用任何商标、标识或服务标志。" data-en="Chrono and all its content, features, and appearance are copyrighted. Unless explicitly authorized by this agreement, you may not use any trademarks, logos, or service marks without prior written permission.">Chrono 及其所有内容、功能和外观均为版权所有。除非本协议明确授权，否则未经事先书面许可，您不得使用任何商标、标识或服务标志。</p>
+
+        <h2 data-zh="免责声明" data-en="Disclaimer">免责声明</h2>
+        <p data-zh="本应用按"原样"和"可用"基础提供，不提供任何形式的明示或暗示保证。我们不保证：" data-en="This app is provided on an 'as is' and 'available' basis without any express or implied warranties. We do not guarantee:">本应用按"原样"和"可用"基础提供，不提供任何形式的明示或暗示保证。我们不保证：</p>
+        <ul>
+            <li data-zh="应用将满足您的所有需求" data-en="The app will meet all your needs">应用将满足您的所有需求</li>
+            <li data-zh="应用将不间断、及时、安全或无错误" data-en="The app will be uninterrupted, timely, secure, or error-free">应用将不间断、及时、安全或无错误</li>
+            <li data-zh="通过使用应用获得的结果将是准确或可靠的" data-en="Results obtained through using the app will be accurate or reliable">通过使用应用获得的结果将是准确或可靠的</li>
+        </ul>
+
+        <h2 data-zh="责任限制" data-en="Limitation of Liability">责任限制</h2>
+        <p data-zh="在任何情况下，Chrono 及其开发者均不对以下情况承担责任：" data-en="In no event shall Chrono and its developers be liable for:">在任何情况下，Chrono 及其开发者均不对以下情况承担责任：</p>
+        <ul>
+            <li data-zh="任何间接、偶然、特殊、惩罚性或后果性损害" data-en="Any indirect, incidental, special, punitive, or consequential damages">任何间接、偶然、特殊、惩罚性或后果性损害</li>
+            <li data-zh="数据丢失或损坏" data-en="Data loss or corruption">数据丢失或损坏</li>
+            <li data-zh="利润损失" data-en="Loss of profits">利润损失</li>
+            <li data-zh="服务中断" data-en="Service interruption">服务中断</li>
+        </ul>
+
+        <h2 data-zh="数据备份" data-en="Data Backup">数据备份</h2>
+        <p data-zh="您有责任维护和备份您的数据。我们强烈建议您：" data-en="You are responsible for maintaining and backing up your data. We strongly recommend that you:">您有责任维护和备份您的数据。我们强烈建议您：</p>
+        <ul>
+            <li data-zh="定期备份您的 iOS 设备" data-en="Regularly backup your iOS device">定期备份您的 iOS 设备</li>
+            <li data-zh="启用 iCloud 备份" data-en="Enable iCloud backup">启用 iCloud 备份</li>
+            <li data-zh="在升级或更换设备前确保数据已备份" data-en="Ensure data is backed up before upgrading or replacing devices">在升级或更换设备前确保数据已备份</li>
+        </ul>
+
+        <h2 data-zh="更新和修改" data-en="Updates and Modifications">更新和修改</h2>
+        <p data-zh="我们保留随时修改或更新这些条款的权利。重大变更将通过应用内通知或网站公告告知您。继续使用本应用即表示接受更新后的条款。" data-en="We reserve the right to modify or update these terms at any time. Significant changes will be notified through in-app notifications or website announcements. Continued use of this app indicates acceptance of the updated terms.">我们保留随时修改或更新这些条款的权利。重大变更将通过应用内通知或网站公告告知您。继续使用本应用即表示接受更新后的条款。</p>
+
+        <h2 data-zh="终止" data-en="Termination">终止</h2>
+        <p data-zh="如果您违反这些条款，我们有权终止或暂停您对应用的访问权限，恕不另行通知。" data-en="If you violate these terms, we have the right to terminate or suspend your access to the app without prior notice.">如果您违反这些条款，我们有权终止或暂停您对应用的访问权限，恕不另行通知。</p>
+
+        <h2 data-zh="适用法律" data-en="Applicable Law">适用法律</h2>
+        <p data-zh="这些条款受中华人民共和国法律管辖。因这些条款引起的任何争议应通过友好协商解决。" data-en="These terms are governed by the laws of the People's Republic of China. Any disputes arising from these terms should be resolved through friendly consultation.">这些条款受中华人民共和国法律管辖。因这些条款引起的任何争议应通过友好协商解决。</p>
+
+        <h2 data-zh="联系我们" data-en="Contact Us">联系我们</h2>
+        <p data-zh="如果您对这些使用条款有任何疑问，请联系我们：" data-en="If you have any questions about these terms of use, please contact us:">如果您对这些使用条款有任何疑问，请联系我们：</p>
+        <p>电子邮件：<a href="mailto:chronoapp@163.com" style="color: #007AFF;">chronoapp@163.com</a></p>
+
+        <a href="index.html" class="back-link" data-zh="← 返回首页" data-en="← Back to Home">← 返回首页</a>
+    </div>
+
+    <script>
+        // 语言切换功能
+        function switchLanguage() {
+            const select = document.getElementById('languageSelect');
+            const lang = select.value;
+            
+            // 更新所有带有 data-zh 和 data-en 属性的元素
+            const elements = document.querySelectorAll('[data-zh][data-en]');
+            elements.forEach(element => {
+                if (lang === 'zh') {
+                    element.innerHTML = element.getAttribute('data-zh');
+                } else {
+                    element.innerHTML = element.getAttribute('data-en');
+                }
+            });
+            
+            // 更新页面语言属性
+            document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+            
+            // 保存语言选择
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // 页面加载时检测浏览器语言
+        function detectLanguage() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang) {
+                document.getElementById('languageSelect').value = savedLang;
+                switchLanguage();
+                return;
+            }
+            
+            const browserLang = navigator.language || navigator.userLanguage;
+            const lang = browserLang.startsWith('zh') ? 'zh' : 'en';
+            document.getElementById('languageSelect').value = lang;
+            switchLanguage();
+        }
+
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', detectLanguage);
+    </script>
+</body>
+</html>
+
