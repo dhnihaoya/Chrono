@@ -11,9 +11,8 @@
     <script src="js/common.js"></script>
     <script src="js/index.js"></script>
 </head>
-<body>
-    <!-- 顶部控件：主题切换 + 语言选择 -->
-    <div class="site-controls">
+<body class="demo-page">
+    <div class="site-controls demo-controls">
         <button id="themeToggle" class="theme-toggle" aria-label="切换主题">
             <span class="theme-icon-light">☀️</span>
             <span class="theme-icon-dark">🌙</span>
@@ -24,15 +23,19 @@
         </select>
     </div>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="container">
-            <div class="hero-layout">
-                <div class="hero-image">
-                    <img data-asset="main" alt="" data-alt-zh="Chrono 主页面" data-alt-en="Chrono home timeline preview" class="hero-screenshot adaptive-asset">
+    <header class="demo-hero">
+        <div class="demo-shell">
+            <nav class="demo-nav" aria-label="Chrono">
+                <div class="demo-brand">
+                    <img data-asset="icon" data-asset-theme="light" alt="Chrono" class="demo-brand-icon adaptive-asset">
+                    <span>Chrono</span>
                 </div>
-                <div class="hero-content">
-                    <div class="app-icon-options" aria-label="Chrono appearance preview">
+                <a href="https://apps.apple.com/cn/app/chrono/id6753885021" class="demo-nav-link" data-zh="App Store" data-en="App Store">App Store</a>
+            </nav>
+
+            <div class="demo-hero-grid">
+                <div class="demo-hero-copy">
+                    <div class="app-icon-options demo-icon-options" aria-label="Chrono appearance preview">
                         <button type="button" class="app-icon-option active" data-theme-option="light" aria-label="浅色模式" aria-pressed="true">
                             <img data-asset="icon" data-asset-theme="light" alt="Chrono" class="app-icon-img adaptive-asset">
                         </button>
@@ -40,167 +43,119 @@
                             <img data-asset="icon" data-asset-theme="dark" alt="Chrono" class="app-icon-img adaptive-asset">
                         </button>
                     </div>
-                    <h1>Chrono</h1>
-                    <p class="tagline" data-zh="优雅的时间线任务管理 ⏰✨" data-en="Elegant Timeline Task Management ⏰✨">优雅的时间线任务管理 ⏰✨</p>
-                    <p class="subtitle" data-zh="让每一刻都井然有序，用时间线重新定义待办事项" data-en="Organize every moment with timeline-based task management">让每一刻都井然有序，用时间线重新定义待办事项</p>
-                    <div class="cta-buttons">
-                        <a href="https://apps.apple.com/cn/app/chrono/id6753885021" class="btn btn-primary">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <p class="demo-kicker" data-zh="日程 · 提醒 · 专注" data-en="Timeline Task Management">日程 · 提醒 · 专注</p>
+                    <h1 data-zh="今天做什么，几点开始" data-en="Put tasks, reminders, and focus back on one timeline">今天做什么，几点开始</h1>
+                    <p class="demo-subtitle" data-zh="把日程、提醒事项和专注记录放进同一条时间线，不用在几个 App 之间来回切换。" data-en="Chrono helps you see today clearly, plan what comes next, and keep every focused session in context.">把日程、提醒事项和专注记录放进同一条时间线，不用在几个 App 之间来回切换。</p>
+                    <div class="demo-cta-row">
+                        <a href="https://apps.apple.com/cn/app/chrono/id6753885021" class="demo-primary-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
                             </svg>
                             <span data-zh="App Store 下载" data-en="Download on App Store">App Store 下载</span>
                         </a>
-                        <span class="btn btn-secondary">
-                            <span data-zh="UI设计：1176180038@qq.com" data-en="UI Design: 1176180038@qq.com">UI设计：1176180038@qq.com</span>
-                        </span>
+                        <span class="demo-design-credit" data-zh="UI设计：1176180038@qq.com" data-en="UI Design: 1176180038@qq.com">UI设计：1176180038@qq.com</span>
+                    </div>
+                </div>
+
+                <div class="demo-device-stage" aria-label="Chrono app preview">
+                    <img data-asset="focus" alt="" data-alt-zh="专注模式" data-alt-en="Focus mode" class="demo-phone demo-phone-left adaptive-asset">
+                    <img data-asset="main" alt="" data-alt-zh="Chrono 主页面" data-alt-en="Chrono home timeline preview" class="demo-phone demo-phone-main adaptive-asset">
+                    <img data-asset="insight" alt="" data-alt-zh="数据洞察" data-alt-en="Insights" class="demo-phone demo-phone-right adaptive-asset">
+                    <div class="demo-widget-card">
+                        <img data-asset="widgets" alt="" data-alt-zh="小组件预览" data-alt-en="Widgets preview" class="adaptive-asset">
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <h2 data-zh="核心功能" data-en="Core Features">核心功能</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📅</div>
-                    <h3 data-zh="时间线视图" data-en="Timeline View">时间线视图</h3>
-                    <p data-zh="直观的时间线展示，让您一眼掌握今天、本周和未来的所有任务安排" data-en="Intuitive timeline display to see all your tasks for today, this week, and the future at a glance">直观的时间线展示，让您一眼掌握今天、本周和未来的所有任务安排</p>
+    <main>
+        <section class="demo-bento">
+            <div class="demo-shell">
+                <div class="demo-section-heading">
+                    <h2 data-zh="核心功能" data-en="Core Features">核心功能</h2>
+                    <p class="demo-section-subtitle" data-zh="少一点整理，多一点推进" data-en="Plan, focus, and review around time">少一点整理，多一点推进</p>
                 </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🏷️</div>
-                    <h3 data-zh="智能分类标签" data-en="Smart Category Tags">智能分类标签</h3>
-                    <p data-zh="灵活的标签系统，支持自定义分类和颜色，让任务管理更加个性化" data-en="Flexible tagging system with custom categories and colors for personalized task management">灵活的标签系统，支持自定义分类和颜色，让任务管理更加个性化</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🔔</div>
-                    <h3 data-zh="Apple 提醒事项集成" data-en="Apple Reminders Integration">Apple 提醒事项集成</h3>
-                    <p data-zh="无缝同步 Apple 提醒事项，在熟悉的 Apple 生态中管理所有待办" data-en="Seamlessly sync with Apple Reminders to manage all your tasks within the familiar Apple ecosystem">无缝同步 Apple 提醒事项，在熟悉的 Apple 生态中管理所有待办</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📆</div>
-                    <h3 data-zh="日历同步" data-en="Calendar Sync">日历同步</h3>
-                    <p data-zh="与 Apple 日历双向同步，事件和任务统一管理，不再遗漏" data-en="Two-way sync with Apple Calendar for unified event and task management">与 Apple 日历双向同步，事件和任务统一管理，不再遗漏</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3 data-zh="快速操作" data-en="Quick Actions">快速操作</h3>
-                    <p data-zh="流畅的滑动手势，轻扫即可完成、延期或删除任务" data-en="Smooth swipe gestures to complete, postpone, or delete tasks with a flick">流畅的滑动手势，轻扫即可完成、延期或删除任务</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3 data-zh="专注模式" data-en="Focus Mode">专注模式</h3>
-                    <p data-zh="专注于当前任务，提升工作效率，记录每一次专注时光" data-en="Focus on current tasks to boost productivity and track every focused moment">专注于当前任务，提升工作效率，记录每一次专注时光</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3 data-zh="数据洞察" data-en="Data Insights">数据洞察</h3>
-                    <p data-zh="可视化统计分析，了解时间分配，持续优化工作习惯" data-en="Visual analytics to understand time allocation and continuously optimize work habits">可视化统计分析，了解时间分配，持续优化工作习惯</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🌓</div>
-                    <h3 data-zh="浅色与吸血鬼模式" data-en="Light & Dracula Modes">浅色与吸血鬼模式</h3>
-                    <p data-zh="App 支持浅色外观和 Dracula 风格深色外观，适配白天和夜间使用" data-en="The app supports a light appearance and a Dracula-style dark appearance for day and night use">App 支持浅色外观和 Dracula 风格深色外观，适配白天和夜间使用</p>
+                <div class="demo-bento-grid">
+                    <article class="demo-bento-card demo-bento-large">
+                        <div class="feature-icon">📅</div>
+                        <h3 data-zh="时间线视图" data-en="Timeline View">时间线视图</h3>
+                        <p data-zh="按时间排好今天、本周和未来的安排。打开 Chrono，先看顺序，再决定下一步。" data-en="Intuitive timeline display to see all your tasks for today, this week, and the future at a glance">按时间排好今天、本周和未来的安排。打开 Chrono，先看顺序，再决定下一步。</p>
+                    </article>
+                    <article class="demo-bento-card">
+                        <div class="feature-icon">🏷️</div>
+                        <h3 data-zh="智能分类标签" data-en="Smart Category Tags">智能分类标签</h3>
+                        <p data-zh="用颜色和标签区分工作、健康、生活，不用把每件事都写成一样。" data-en="Custom categories and colors for personal task management">用颜色和标签区分工作、健康、生活，不用把每件事都写成一样。</p>
+                    </article>
+                    <article class="demo-bento-card">
+                        <div class="feature-icon">🔔</div>
+                        <h3 data-zh="Apple 提醒事项集成" data-en="Apple Reminders Integration">Apple 提醒事项集成</h3>
+                        <p data-zh="继续用 Apple 提醒事项，Chrono 负责把它们放回你的时间线。" data-en="Sync Apple Reminders and manage tasks inside the Apple ecosystem">继续用 Apple 提醒事项，Chrono 负责把它们放回你的时间线。</p>
+                    </article>
+                    <article class="demo-bento-card demo-bento-wide">
+                        <div class="feature-icon">📆</div>
+                        <h3 data-zh="日历同步" data-en="Calendar Sync">日历同步</h3>
+                        <p data-zh="日历里的会议、安排和待办放在一起看，临时变动也更容易发现。" data-en="Two-way Apple Calendar sync keeps events and tasks together">日历里的会议、安排和待办放在一起看，临时变动也更容易发现。</p>
+                    </article>
+                    <article class="demo-bento-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3 data-zh="快速操作" data-en="Quick Actions">快速操作</h3>
+                        <p data-zh="完成、延期、删除，轻扫一下就处理掉。" data-en="Swipe to complete, postpone, or delete tasks">完成、延期、删除，轻扫一下就处理掉。</p>
+                    </article>
+                    <article class="demo-bento-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3 data-zh="专注模式" data-en="Focus Mode">专注模式</h3>
+                        <p data-zh="开始一段专注，结束后自动留下记录。" data-en="Focus on current tasks and track every session">开始一段专注，结束后自动留下记录。</p>
+                    </article>
+                    <article class="demo-bento-card">
+                        <div class="feature-icon">📊</div>
+                        <h3 data-zh="数据洞察" data-en="Data Insights">数据洞察</h3>
+                        <p data-zh="看看时间花在哪里，再调整下一周怎么安排。" data-en="Understand time allocation and improve habits">看看时间花在哪里，再调整下一周怎么安排。</p>
+                    </article>
+                    <article class="demo-bento-card">
+                        <div class="feature-icon">🌓</div>
+                        <h3 data-zh="浅色与吸血鬼模式" data-en="Light & Dracula Modes">浅色与吸血鬼模式</h3>
+                        <p data-zh="白天清爽，夜里切到 Dracula 风格。" data-en="Made for day and night use">白天清爽，夜里切到 Dracula 风格。</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Screenshots Section -->
-    <section class="screenshots">
-        <div class="container">
-            <h2 data-zh="应用预览" data-en="App Preview">应用预览</h2>
-            <div class="screenshots-carousel">
-                <div class="screenshot-item">
-                    <img data-asset="main" alt="" data-alt-zh="主页面" data-alt-en="Home timeline" class="screenshot-img adaptive-asset">
+        <section class="demo-gallery">
+            <div class="demo-shell">
+                <div class="demo-section-heading">
+                    <h2 data-zh="应用预览" data-en="App Preview">应用预览</h2>
+                    <p class="demo-section-subtitle" data-zh="看看实际界面" data-en="A full workflow you can see screen by screen">看看实际界面</p>
                 </div>
-                <div class="screenshot-item">
-                    <img data-asset="add_schedule" alt="" data-alt-zh="添加任务" data-alt-en="Add task" class="screenshot-img adaptive-asset">
+                <div class="demo-gallery-strip">
+                    <img data-asset="main" alt="" data-alt-zh="主页面" data-alt-en="Home timeline" class="adaptive-asset">
+                    <img data-asset="add_schedule" alt="" data-alt-zh="添加任务" data-alt-en="Add task" class="adaptive-asset">
+                    <img data-asset="focus" alt="" data-alt-zh="专注模式" data-alt-en="Focus mode" class="adaptive-asset">
+                    <img data-asset="insight" alt="" data-alt-zh="数据洞察" data-alt-en="Insights" class="adaptive-asset">
+                    <img data-asset="mine" alt="" data-alt-zh="个人中心" data-alt-en="Profile" class="adaptive-asset">
+                    <img data-asset="widgets" alt="" data-alt-zh="小组件" data-alt-en="Widgets" class="adaptive-asset">
                 </div>
-                <div class="screenshot-item">
-                    <img data-asset="focus" alt="" data-alt-zh="专注模式" data-alt-en="Focus mode" class="screenshot-img adaptive-asset">
-                </div>
-                <div class="screenshot-item">
-                    <img data-asset="insight" alt="" data-alt-zh="数据洞察" data-alt-en="Insights" class="screenshot-img adaptive-asset">
-                </div>
-                <div class="screenshot-item">
-                    <img data-asset="mine" alt="" data-alt-zh="个人中心" data-alt-en="Profile" class="screenshot-img adaptive-asset">
-                </div>
-                <div class="screenshot-item">
-                    <img data-asset="widgets" alt="" data-alt-zh="小组件" data-alt-en="Widgets" class="screenshot-img adaptive-asset">
+                <div class="demo-gallery-scrollbar" aria-hidden="true">
+                    <div class="demo-gallery-thumb"></div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Support Section -->
-    <section class="support">
-        <div class="container">
-            <h2 data-zh="技术支持" data-en="Support">技术支持</h2>
-            <div class="support-content">
-                <div class="support-card">
-                    <h3 data-zh="📧 联系我们" data-en="📧 Contact Us">📧 联系我们</h3>
-                    <p data-zh="遇到问题或有建议？欢迎优先在 GitHub Issue 反馈。" data-en="Having issues or suggestions? GitHub Issues is the preferred support channel.">遇到问题或有建议？欢迎优先在 GitHub Issue 反馈。</p>
-                    <a href="https://github.com/dhnihaoya/ChronoWebsite/issues" class="support-link" data-zh="提交 Issue" data-en="Submit an Issue">提交 Issue</a>
-                    <a href="mailto:chronoapp@163.com" class="support-link">chronoapp@163.com</a>
+        <section class="demo-support">
+            <div class="demo-shell demo-support-grid">
+                <div>
+                    <p class="demo-kicker" data-zh="技术支持" data-en="Support">技术支持</p>
+                    <h2 data-zh="有问题，直接反馈" data-en="Feedback, privacy, and terms in one place">有问题，直接反馈</h2>
                 </div>
-
-                <div class="support-card">
-                    <h3 data-zh="🎨 UI 设计" data-en="🎨 UI Design">🎨 UI 设计</h3>
-                    <p data-zh="界面设计、视觉体验或合作沟通" data-en="Interface design, visual experience, and collaboration">界面设计、视觉体验或合作沟通</p>
-                    <span class="support-link">1176180038@qq.com</span>
-                </div>
-
-                <div class="support-card">
-                    <h3 data-zh="📖 常见问题" data-en="📖 FAQ">📖 常见问题</h3>
-                    <div class="faq-list">
-                        <details>
-                            <summary data-zh="如何同步 Apple 提醒事项？" data-en="How to sync Apple Reminders?">如何同步 Apple 提醒事项？</summary>
-                            <p data-zh="在设置页面中选择要同步的提醒事项列表，授权后即可自动同步。" data-en="Select the reminder lists to sync in the settings page, and they will sync automatically after authorization.">在设置页面中选择要同步的提醒事项列表，授权后即可自动同步。</p>
-                        </details>
-                        <details>
-                            <summary data-zh="任务数据存储在哪里？" data-en="Where is task data stored?">任务数据存储在哪里？</summary>
-                            <p data-zh="所有数据都存储在您的设备本地，我们不会上传您的任何个人信息。" data-en="All data is stored locally on your device, and we do not upload any of your personal information.">所有数据都存储在您的设备本地，我们不会上传您的任何个人信息。</p>
-                        </details>
-                        <details>
-                            <summary data-zh="支持哪些 iOS 版本？" data-en="Which iOS versions are supported?">支持哪些 iOS 版本？</summary>
-                            <p data-zh="Chrono 需要 iOS 17.0 或更高版本。" data-en="Chrono requires iOS 17.0 or later.">Chrono 需要 iOS 17.0 或更高版本。</p>
-                        </details>
-                    </div>
-                </div>
-
-                <div class="support-card">
-                    <h3 data-zh="🔒 隐私保护" data-en="🔒 Privacy Protection">🔒 隐私保护</h3>
-                    <p data-zh="我们重视您的隐私" data-en="We value your privacy">我们重视您的隐私</p>
-                    <a href="privacy.html" class="support-link" data-zh="隐私政策" data-en="Privacy Policy">隐私政策</a>
-                    <a href="terms.html" class="support-link" data-zh="使用条款" data-en="Terms of Use">使用条款</a>
+                <div class="demo-support-links">
+                    <a href="https://github.com/dhnihaoya/ChronoWebsite/issues" data-zh="提交 GitHub Issue" data-en="Submit a GitHub Issue">提交 GitHub Issue</a>
+                    <a href="mailto:chronoapp@163.com">chronoapp@163.com</a>
+                    <a href="privacy.html" data-zh="隐私政策" data-en="Privacy Policy">隐私政策</a>
+                    <a href="terms.html" data-zh="使用条款" data-en="Terms of Use">使用条款</a>
+                    <span data-zh="UI设计：1176180038@qq.com" data-en="UI Design: 1176180038@qq.com">UI设计：1176180038@qq.com</span>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p data-zh="&copy; 2025 Chrono. 用心打造 🇨🇳" data-en="&copy; 2025 Chrono. Made with ❤️">&copy; 2025 Chrono. 用心打造 🇨🇳</p>
-            <div class="footer-links">
-                <a href="privacy.html" data-zh="隐私政策" data-en="Privacy Policy">隐私政策</a>
-                <a href="terms.html" data-zh="使用条款" data-en="Terms of Use">使用条款</a>
-                <a href="https://github.com/dhnihaoya/ChronoWebsite/issues" data-zh="提交 Issue" data-en="Submit Issue">提交 Issue</a>
-                <a href="mailto:chronoapp@163.com" data-zh="联系我们" data-en="Contact Us">联系我们</a>
-                <span data-zh="UI设计：1176180038@qq.com" data-en="UI Design: 1176180038@qq.com">UI设计：1176180038@qq.com</span>
-            </div>
-        </div>
-    </footer>
-
+        </section>
+    </main>
 </body>
 </html>

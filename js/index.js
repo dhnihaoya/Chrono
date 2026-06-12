@@ -108,6 +108,81 @@
         switchTheme(currentTheme === 'light' ? 'dark' : 'light');
     }
 
+    // ===== 应用预览横向滚动条 =====
+    function initGalleryScrollbar() {
+        var strip = document.querySelector('.demo-gallery-strip');
+        var track = document.querySelector('.demo-gallery-scrollbar');
+        var thumb = document.querySelector('.demo-gallery-thumb');
+        if (!strip || !track || !thumb) return;
+
+        var dragging = false;
+        var dragStartX = 0;
+        var dragStartScrollLeft = 0;
+
+        function getMaxScroll() {
+            return Math.max(0, strip.scrollWidth - strip.clientWidth);
+        }
+
+        function getTrackSpace() {
+            return Math.max(0, track.clientWidth - thumb.offsetWidth - 8);
+        }
+
+        function updateThumb() {
+            var maxScroll = getMaxScroll();
+            var visibleRatio = maxScroll === 0 ? 1 : strip.clientWidth / strip.scrollWidth;
+            var thumbPercent = Math.max(18, Math.min(100, visibleRatio * 100));
+            thumb.style.width = thumbPercent + '%';
+
+            var progress = maxScroll === 0 ? 0 : strip.scrollLeft / maxScroll;
+            thumb.style.transform = 'translateX(' + (progress * getTrackSpace()) + 'px)';
+        }
+
+        function scrollToPointer(clientX) {
+            var rect = track.getBoundingClientRect();
+            var thumbCenter = thumb.offsetWidth / 2;
+            var x = Math.max(0, Math.min(rect.width, clientX - rect.left - thumbCenter));
+            var space = getTrackSpace();
+            var progress = space === 0 ? 0 : x / space;
+            strip.scrollLeft = progress * getMaxScroll();
+        }
+
+        strip.addEventListener('scroll', updateThumb, { passive: true });
+        window.addEventListener('resize', updateThumb);
+
+        track.addEventListener('pointerdown', function (event) {
+            dragging = true;
+            dragStartX = event.clientX;
+            dragStartScrollLeft = strip.scrollLeft;
+            track.setPointerCapture(event.pointerId);
+            if (event.target !== thumb) {
+                scrollToPointer(event.clientX);
+            }
+        });
+
+        track.addEventListener('pointermove', function (event) {
+            if (!dragging) return;
+            var space = getTrackSpace();
+            if (space === 0) return;
+            var delta = event.clientX - dragStartX;
+            strip.scrollLeft = dragStartScrollLeft + (delta / space) * getMaxScroll();
+        });
+
+        track.addEventListener('pointerup', function (event) {
+            dragging = false;
+            track.releasePointerCapture(event.pointerId);
+        });
+
+        track.addEventListener('pointercancel', function () {
+            dragging = false;
+        });
+
+        document.querySelectorAll('.demo-gallery-strip img').forEach(function (img) {
+            img.addEventListener('load', updateThumb);
+        });
+
+        updateThumb();
+    }
+
     // ===== 初始化 =====
     function init() {
         // 为所有 adaptive-asset 绑定降级处理
@@ -139,6 +214,9 @@
                 switchTheme(option.getAttribute('data-theme-option'));
             });
         }
+
+        // 初始化应用预览滚动条
+        initGalleryScrollbar();
     }
 
     document.addEventListener('DOMContentLoaded', init);
