@@ -30,7 +30,7 @@ Chrono 适合想要用更少整理成本管理日程、提醒事项和专注时�
 
 | 首页时间线 | 添加任务 | 专注模式 | 数据洞察 | 个人中心 |
 | --- | --- | --- | --- | --- |
-| ![Chrono 首页时间线](pics_cn/main.jpg) | ![Chrono 添加任务](pics_cn/add_schedule.jpg) | ![Chrono 专注模式](pics_cn/focus.jpg) | ![Chrono 数据洞察](pics_cn/insight.jpg) | ![Chrono 个人中心](pics_cn/mine.jpg) |
+| ![Chrono 首页时间线](assets/light/zh/main.jpg) | ![Chrono 添加任务](assets/light/zh/add_schedule.jpg) | ![Chrono 专注模式](assets/light/zh/focus.jpg) | ![Chrono 数据洞察](assets/light/zh/insight.jpg) | ![Chrono 个人中心](assets/light/zh/mine.jpg) |
 
 ## 技术支持与反馈
 
