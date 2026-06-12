@@ -81,9 +81,6 @@
     --interactive-outline: var(--brand-brown-accent);
     --title-gradient: linear-gradient(135deg, #735233, #926247);
     --footer-text: #FFFFFF;
-    --interactive-border: var(--brand-brown);
-    --interactive-outline: var(--brand-brown-accent);
-    --title-gradient: linear-gradient(135deg, #735233, #926247);
 
     /* ===== FAQ ===== */
     --faq-bg: var(--bg-section);
@@ -168,9 +165,6 @@ html[data-preview-theme="dark"] {
     --interactive-outline: #39FF14;
     --title-gradient: linear-gradient(135deg, #39FF14, #FFB86C);
     --footer-text: #F2F2F7;
-    --interactive-border: #39FF14;
-    --interactive-outline: #39FF14;
-    --title-gradient: linear-gradient(135deg, #39FF14, #FFB86C);
 
     /* FAQ */
     --faq-bg: #3D3E4C;
@@ -194,15 +188,47 @@ body {
     padding: 0 20px;
 }
 
-/* Language Switcher */
-.language-switcher {
+/* 顶部控件：主题切换 + 语言选择 */
+.site-controls {
     position: fixed;
     top: 20px;
     right: 20px;
     z-index: 1000;
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
-.language-switcher select {
+.theme-toggle {
+    background: var(--bg-card);
+    border: 2px solid var(--interactive-border);
+    border-radius: 12px;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+    line-height: 1;
+}
+
+.theme-toggle:hover {
+    background: var(--select-hover-bg);
+    color: var(--select-hover-text);
+    box-shadow: var(--shadow-hover);
+}
+
+.theme-toggle:focus {
+    outline: none;
+    border-color: var(--interactive-outline);
+    box-shadow: var(--shadow-focus);
+}
+
+/* 根据当前主题显示 ☀️ 或 🌙 */
+html:not([data-preview-theme="dark"]) .theme-icon-dark { display: none; }
+html[data-preview-theme="dark"] .theme-icon-light { display: none; }
+
+.site-controls select {
     background: var(--bg-card);
     border: 2px solid var(--interactive-border);
     border-radius: 12px;
@@ -217,13 +243,13 @@ body {
     backdrop-filter: blur(10px);
 }
 
-.language-switcher select:hover {
+.site-controls select:hover {
     background: var(--select-hover-bg);
     color: var(--select-hover-text);
     box-shadow: var(--shadow-hover);
 }
 
-.language-switcher select:focus {
+.site-controls select:focus {
     outline: none;
     border-color: var(--interactive-outline);
     box-shadow: var(--shadow-focus);
@@ -687,15 +713,21 @@ footer p {
         font-size: 1rem;
     }
 
-    .language-switcher {
+    .site-controls {
         top: 15px;
         right: 15px;
+        gap: 6px;
     }
 
-    .language-switcher select {
+    .site-controls select {
         padding: 6px 10px;
         font-size: 12px;
         min-width: 100px;
+    }
+
+    .theme-toggle {
+        padding: 6px 10px;
+        font-size: 14px;
     }
 }
 

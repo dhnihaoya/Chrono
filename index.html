@@ -8,27 +8,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <select id="languageSelect" onchange="switchLanguage()">
+    <!-- 顶部控件：主题切换 + 语言选择 -->
+    <div class="site-controls">
+        <button id="themeToggle" class="theme-toggle" aria-label="切换主题">
+            <span class="theme-icon-light">☀️</span>
+            <span class="theme-icon-dark">🌙</span>
+        </button>
+        <select id="languageSelect">
             <option value="zh">🇨🇳 中文</option>
             <option value="en">🇺🇸 English</option>
         </select>
     </div>
+
     <!-- Hero Section -->
     <header class="hero">
         <div class="container">
             <div class="hero-layout">
                 <div class="hero-image">
-                    <img src="pics_cn/main.jpg" data-src-zh="pics_cn/main.jpg" data-src-en="pics_en/main.svg" alt="Chrono 主页面" data-alt-zh="Chrono 主页面" data-alt-en="Chrono home timeline preview" class="hero-screenshot localized-screenshot">
+                    <img data-asset="main" alt="" data-alt-zh="Chrono 主页面" data-alt-en="Chrono home timeline preview" class="hero-screenshot adaptive-asset">
                 </div>
                 <div class="hero-content">
                     <div class="app-icon-options" aria-label="Chrono appearance preview">
                         <button type="button" class="app-icon-option active" data-theme-option="light" aria-label="浅色模式" aria-pressed="true">
-                            <img src="pics_cn/Icon-1024.jpg" alt="Chrono 浅色 App Icon" class="app-icon-img">
+                            <img data-asset="icon" data-asset-theme="light" alt="Chrono" class="app-icon-img adaptive-asset">
                         </button>
                         <button type="button" class="app-icon-option" data-theme-option="dark" aria-label="深色模式" aria-pressed="false">
-                            <img src="pics_dark/Icon-Dark-1024.png" alt="Chrono 深色 App Icon" class="app-icon-img">
+                            <img data-asset="icon" data-asset-theme="dark" alt="Chrono" class="app-icon-img adaptive-asset">
                         </button>
                     </div>
                     <h1>Chrono</h1>
@@ -112,19 +117,19 @@
             <h2 data-zh="应用预览" data-en="App Preview">应用预览</h2>
             <div class="screenshots-carousel">
                 <div class="screenshot-item">
-                    <img src="pics_cn/main.jpg" data-src-zh="pics_cn/main.jpg" data-src-en="pics_en/main.svg" alt="主页面" data-alt-zh="主页面" data-alt-en="Home timeline" class="screenshot-img localized-screenshot">
+                    <img data-asset="main" alt="" data-alt-zh="主页面" data-alt-en="Home timeline" class="screenshot-img adaptive-asset">
                 </div>
                 <div class="screenshot-item">
-                    <img src="pics_cn/add_schedule.jpg" data-src-zh="pics_cn/add_schedule.jpg" data-src-en="pics_en/add_schedule.svg" alt="添加任务" data-alt-zh="添加任务" data-alt-en="Add task" class="screenshot-img localized-screenshot">
+                    <img data-asset="add_schedule" alt="" data-alt-zh="添加任务" data-alt-en="Add task" class="screenshot-img adaptive-asset">
                 </div>
                 <div class="screenshot-item">
-                    <img src="pics_cn/focus.jpg" data-src-zh="pics_cn/focus.jpg" data-src-en="pics_en/focus.svg" alt="专注模式" data-alt-zh="专注模式" data-alt-en="Focus mode" class="screenshot-img localized-screenshot">
+                    <img data-asset="focus" alt="" data-alt-zh="专注模式" data-alt-en="Focus mode" class="screenshot-img adaptive-asset">
                 </div>
                 <div class="screenshot-item">
-                    <img src="pics_cn/insight.jpg" data-src-zh="pics_cn/insight.jpg" data-src-en="pics_en/insight.svg" alt="数据洞察" data-alt-zh="数据洞察" data-alt-en="Insights" class="screenshot-img localized-screenshot">
+                    <img data-asset="insight" alt="" data-alt-zh="数据洞察" data-alt-en="Insights" class="screenshot-img adaptive-asset">
                 </div>
                 <div class="screenshot-item">
-                    <img src="pics_cn/mine.jpg" data-src-zh="pics_cn/mine.jpg" data-src-en="pics_en/mine.svg" alt="个人中心" data-alt-zh="个人中心" data-alt-en="Profile" class="screenshot-img localized-screenshot">
+                    <img data-asset="mine" alt="" data-alt-zh="个人中心" data-alt-en="Profile" class="screenshot-img adaptive-asset">
                 </div>
             </div>
         </div>
@@ -191,103 +196,153 @@
     </footer>
 
     <script>
-        // 语言切换功能
-        function switchLanguage() {
-            const select = document.getElementById('languageSelect');
-            const lang = select.value;
-            
-            // 更新所有带有 data-zh 和 data-en 属性的元素
-            const elements = document.querySelectorAll('[data-zh][data-en]');
-            elements.forEach(element => {
+        // ===== 全局状态 =====
+        var currentLang = 'zh';
+        var currentTheme = 'light';
+
+        // ===== 资源路径映射 =====
+        // icon 不跟语言走，直接放 assets/{theme}/icon.{ext}
+        var ICON_EXT = { light: 'jpg', dark: 'png' };
+        // 截图按 theme/lang 区分
+        var ASSET_EXT = {
+            main:         { light: { zh: 'jpg', en: 'svg' }, dark: { zh: 'jpg', en: 'jpg' } },
+            add_schedule: { light: { zh: 'jpg', en: 'svg' }, dark: { zh: 'jpg', en: 'jpg' } },
+            focus:        { light: { zh: 'jpg', en: 'svg' }, dark: { zh: 'jpg', en: 'jpg' } },
+            insight:      { light: { zh: 'jpg', en: 'svg' }, dark: { zh: 'jpg', en: 'jpg' } },
+            mine:         { light: { zh: 'jpg', en: 'svg' }, dark: { zh: 'jpg', en: 'jpg' } }
+        };
+
+        // 根据资源名、主题、语言构建路径
+        function buildAssetPath(name, theme, lang) {
+            if (name === 'icon') {
+                return 'assets/' + theme + '/icon.' + (ICON_EXT[theme] || 'jpg');
+            }
+            var ext = (ASSET_EXT[name] && ASSET_EXT[name][theme] && ASSET_EXT[name][theme][lang])
+                      || 'jpg';
+            return 'assets/' + theme + '/' + lang + '/' + name + '.' + ext;
+        }
+
+        // ===== 图片更新 =====
+        function updateAllAssets() {
+            var imgs = document.querySelectorAll('.adaptive-asset');
+            imgs.forEach(function(img) {
+                var name = img.getAttribute('data-asset');
+                if (!name) return;
+                // Hero icon 按钮用固定主题（data-asset-theme），其余用当前主题
+                var theme = img.getAttribute('data-asset-theme') || currentTheme;
+                var path = buildAssetPath(name, theme, currentLang);
+                img.src = path;
+                var alt = img.getAttribute('data-alt-' + currentLang);
+                if (alt) img.alt = alt;
+            });
+        }
+
+        // 图片加载失败时降级到 light/同语言
+        function handleAssetError() {
+            var img = this;
+            // Hero icon 用固定主题，不需要降级
+            var fixedTheme = img.getAttribute('data-asset-theme');
+            if (fixedTheme) return;
+            if (currentTheme === 'light') return;
+            var name = img.getAttribute('data-asset');
+            if (!name) return;
+            // 防止重复降级
+            if (img.dataset.fallenBack) return;
+            img.dataset.fallenBack = '1';
+            img.src = buildAssetPath(name, 'light', currentLang);
+        }
+
+        // ===== 文字切换 =====
+        function updateTextContent(lang) {
+            var elements = document.querySelectorAll('[data-zh][data-en]');
+            elements.forEach(function(element) {
                 if (lang === 'zh') {
                     element.textContent = element.getAttribute('data-zh');
                 } else {
                     element.textContent = element.getAttribute('data-en');
                 }
             });
-            
-            // 更新页面语言属性
             document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-
-            // 更新随语言切换的截图资源
-            updateLocalizedScreenshots(lang);
-            
-            // 保存语言选择
-            localStorage.setItem('preferredLanguage', lang);
         }
 
-        function updateLocalizedScreenshots(lang) {
-            const screenshots = document.querySelectorAll('.localized-screenshot');
-            screenshots.forEach(image => {
-                const src = image.getAttribute('data-src-' + lang);
-                const alt = image.getAttribute('data-alt-' + lang);
-                if (src) {
-                    image.setAttribute('src', src);
-                }
-                if (alt) {
-                    image.setAttribute('alt', alt);
-                }
-            });
+        // ===== 语言切换 =====
+        function switchLanguage(lang) {
+            currentLang = lang;
+            document.getElementById('languageSelect').value = lang;
+            updateTextContent(lang);
+            updateAllAssets();
+            try { localStorage.setItem('preferredLanguage', lang); } catch (e) {}
         }
 
-        function setPreviewTheme(theme) {
+        // ===== 主题切换 =====
+        function switchTheme(theme) {
+            currentTheme = theme;
             document.documentElement.setAttribute('data-preview-theme', theme);
             document.body.setAttribute('data-preview-theme', theme);
-            const options = document.querySelectorAll('.app-icon-option');
-            options.forEach(option => {
-                const isActive = option.getAttribute('data-theme-option') === theme;
+
+            // 更新 Hero icon 按钮状态
+            var options = document.querySelectorAll('.app-icon-option');
+            options.forEach(function(option) {
+                var isActive = option.getAttribute('data-theme-option') === theme;
                 option.classList.toggle('active', isActive);
                 option.setAttribute('aria-pressed', isActive ? 'true' : 'false');
             });
-            try {
-                localStorage.setItem('preferredPreviewTheme', theme);
-            } catch (error) {
-                // localStorage may be unavailable in strict browser modes.
-            }
-        }
 
-        function setupPreviewThemeControls() {
-            const controls = document.querySelector('.app-icon-options');
-            if (!controls) {
-                return;
-            }
-            controls.addEventListener('click', event => {
-                const option = event.target.closest('.app-icon-option');
-                if (!option) {
-                    return;
-                }
-                setPreviewTheme(option.getAttribute('data-theme-option'));
+            // 清除降级标记，更新图片
+            document.querySelectorAll('.adaptive-asset').forEach(function(img) {
+                delete img.dataset.fallenBack;
             });
+            updateAllAssets();
+
+            try { localStorage.setItem('preferredPreviewTheme', theme); } catch (e) {}
         }
 
-        // 页面加载时检测浏览器语言
-        function detectLanguage() {
-            let savedTheme = 'light';
-            try {
-                savedTheme = localStorage.getItem('preferredPreviewTheme') || 'light';
-            } catch (error) {
-                savedTheme = 'light';
-            }
-            setPreviewTheme(savedTheme);
+        // ===== 主题切换按钮（右上角） =====
+        function toggleTheme() {
+            switchTheme(currentTheme === 'light' ? 'dark' : 'light');
+        }
 
-            const savedLang = localStorage.getItem('preferredLanguage');
+        // ===== 初始化 =====
+        function initSite() {
+            // 为所有 adaptive-asset 绑定降级处理
+            document.querySelectorAll('.adaptive-asset').forEach(function(img) {
+                img.addEventListener('error', handleAssetError);
+            });
+
+            // 恢复主题
+            var savedTheme = 'light';
+            try { savedTheme = localStorage.getItem('preferredPreviewTheme') || 'light'; } catch (e) {}
+            switchTheme(savedTheme);
+
+            // 恢复语言
+            var savedLang = null;
+            try { savedLang = localStorage.getItem('preferredLanguage'); } catch (e) {}
             if (savedLang) {
-                document.getElementById('languageSelect').value = savedLang;
-                switchLanguage();
-                return;
+                switchLanguage(savedLang);
+            } else {
+                var browserLang = navigator.language || navigator.userLanguage || '';
+                var lang = browserLang.startsWith('zh') ? 'zh' : 'en';
+                switchLanguage(lang);
             }
-            
-            const browserLang = navigator.language || navigator.userLanguage;
-            const lang = browserLang.startsWith('zh') ? 'zh' : 'en';
-            document.getElementById('languageSelect').value = lang;
-            switchLanguage();
+
+            // 绑定事件
+            document.getElementById('languageSelect').addEventListener('change', function() {
+                switchLanguage(this.value);
+            });
+            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+
+            // Hero icon 按钮点击
+            var controls = document.querySelector('.app-icon-options');
+            if (controls) {
+                controls.addEventListener('click', function(event) {
+                    var option = event.target.closest('.app-icon-option');
+                    if (!option) return;
+                    switchTheme(option.getAttribute('data-theme-option'));
+                });
+            }
         }
 
-        // 页面加载完成后执行
-        document.addEventListener('DOMContentLoaded', () => {
-            setupPreviewThemeControls();
-            detectLanguage();
-        });
+        document.addEventListener('DOMContentLoaded', initSite);
     </script>
 </body>
 </html>
