@@ -341,10 +341,8 @@ html[data-preview-theme="dark"] .demo-page {
 }
 
 .demo-hero {
-    min-height: 100vh;
-    padding: 26px 0 70px;
+    padding: 26px 0 72px;
     position: relative;
-    overflow: hidden;
 }
 
 .demo-hero::before {
@@ -413,7 +411,6 @@ html[data-preview-theme="dark"] .demo-hero::before {
 }
 
 .demo-hero-grid {
-    min-height: calc(100vh - 96px);
     display: grid;
     grid-template-columns: minmax(360px, 0.86fr) minmax(500px, 1.14fr);
     gap: 44px;
@@ -422,7 +419,7 @@ html[data-preview-theme="dark"] .demo-hero::before {
 
 .demo-hero-copy {
     max-width: 560px;
-    padding-top: 20px;
+    padding-top: 40px;
 }
 
 .demo-icon-options {
@@ -510,6 +507,7 @@ html[data-preview-theme="dark"] .demo-hero::before {
 .demo-device-stage {
     min-height: 640px;
     position: relative;
+    padding-top: 60px;
 }
 
 .demo-device-stage::before {
@@ -586,7 +584,7 @@ html[data-preview-theme="dark"] .demo-device-stage::before {
 .demo-bento,
 .demo-gallery,
 .demo-support {
-    padding: 72px 0;
+    padding: 48px 0;
 }
 
 .demo-bento h2,
@@ -627,6 +625,11 @@ html[data-preview-theme="dark"] .demo-device-stage::before {
     color: var(--text-secondary);
     font-size: 1.16rem;
     line-height: 1.7;
+}
+
+/* 深色模式下副标题变为荧光绿 */
+html[data-preview-theme="dark"] .demo-section-subtitle {
+    color: #39FF14;
 }
 
 .demo-gallery {
@@ -691,7 +694,7 @@ html[data-preview-theme="dark"] .demo-device-stage::before {
 .demo-gallery-strip img {
     flex: 0 0 240px;
     width: 240px;
-    height: 480px;
+    height: 520px;
     object-fit: cover;
     border-radius: 32px;
     box-shadow: var(--shadow-screenshot);
@@ -950,7 +953,7 @@ footer p {
     .demo-gallery-strip img {
         flex-basis: 210px;
         width: 210px;
-        height: 420px;
+        height: 460px;
         border-radius: 30px;
     }
 }
