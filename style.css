@@ -40,7 +40,7 @@
     --transition: all 0.3s ease;
 }
 
-body[data-preview-theme="dark"] {
+html[data-preview-theme="dark"] {
     --primary-color: #39FF14;
     --secondary-color: #2ED105;
     --accent-color: #FFB86C;
@@ -182,7 +182,7 @@ body {
     box-shadow: 0 0 0 4px rgba(115, 90, 51, 0.12);
 }
 
-body[data-preview-theme="dark"] .app-icon-option.active {
+html[data-preview-theme="dark"] .app-icon-option.active {
     box-shadow: 0 0 0 4px rgba(57, 255, 20, 0.16);
 }
 
@@ -208,24 +208,24 @@ body[data-preview-theme="dark"] .app-icon-option.active {
     box-shadow: var(--shadow-hover);
 }
 
-body[data-preview-theme="dark"] .hero {
+html[data-preview-theme="dark"] .hero {
     background: linear-gradient(135deg, #282A36 0%, #313340 100%);
 }
 
-body[data-preview-theme="dark"] .hero::before {
+html[data-preview-theme="dark"] .hero::before {
     background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(57,255,20,0.08)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
 }
 
-body[data-preview-theme="dark"] .feature-card,
-body[data-preview-theme="dark"] .support-card {
+html[data-preview-theme="dark"] .feature-card,
+html[data-preview-theme="dark"] .support-card {
     background: var(--bg-card);
 }
 
-body[data-preview-theme="dark"] .faq-list details {
+html[data-preview-theme="dark"] .faq-list details {
     background: #3D3E4C;
 }
 
-body[data-preview-theme="dark"] footer {
+html[data-preview-theme="dark"] footer {
     background: #191A21;
 }
 

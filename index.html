@@ -24,10 +24,10 @@
                 </div>
                 <div class="hero-content">
                     <div class="app-icon-options" aria-label="Chrono appearance preview">
-                        <button type="button" class="app-icon-option active" data-theme-option="light" onclick="setPreviewTheme('light')" aria-label="浅色模式">
+                        <button type="button" class="app-icon-option active" data-theme-option="light" aria-label="浅色模式" aria-pressed="true">
                             <img src="pics_cn/Icon-1024.jpg" alt="Chrono 浅色 App Icon" class="app-icon-img">
                         </button>
-                        <button type="button" class="app-icon-option" data-theme-option="dark" onclick="setPreviewTheme('dark')" aria-label="深色模式">
+                        <button type="button" class="app-icon-option" data-theme-option="dark" aria-label="深色模式" aria-pressed="false">
                             <img src="pics_dark/Icon-Dark-1024.png" alt="Chrono 深色 App Icon" class="app-icon-img">
                         </button>
                     </div>
@@ -231,17 +231,43 @@
         }
 
         function setPreviewTheme(theme) {
+            document.documentElement.setAttribute('data-preview-theme', theme);
             document.body.setAttribute('data-preview-theme', theme);
             const options = document.querySelectorAll('.app-icon-option');
             options.forEach(option => {
-                option.classList.toggle('active', option.getAttribute('data-theme-option') === theme);
+                const isActive = option.getAttribute('data-theme-option') === theme;
+                option.classList.toggle('active', isActive);
+                option.setAttribute('aria-pressed', isActive ? 'true' : 'false');
             });
-            localStorage.setItem('preferredPreviewTheme', theme);
+            try {
+                localStorage.setItem('preferredPreviewTheme', theme);
+            } catch (error) {
+                // localStorage may be unavailable in strict browser modes.
+            }
+        }
+
+        function setupPreviewThemeControls() {
+            const controls = document.querySelector('.app-icon-options');
+            if (!controls) {
+                return;
+            }
+            controls.addEventListener('click', event => {
+                const option = event.target.closest('.app-icon-option');
+                if (!option) {
+                    return;
+                }
+                setPreviewTheme(option.getAttribute('data-theme-option'));
+            });
         }
 
         // 页面加载时检测浏览器语言
         function detectLanguage() {
-            const savedTheme = localStorage.getItem('preferredPreviewTheme') || 'light';
+            let savedTheme = 'light';
+            try {
+                savedTheme = localStorage.getItem('preferredPreviewTheme') || 'light';
+            } catch (error) {
+                savedTheme = 'light';
+            }
             setPreviewTheme(savedTheme);
 
             const savedLang = localStorage.getItem('preferredLanguage');
@@ -258,7 +284,10 @@
         }
 
         // 页面加载完成后执行
-        document.addEventListener('DOMContentLoaded', detectLanguage);
+        document.addEventListener('DOMContentLoaded', () => {
+            setupPreviewThemeControls();
+            detectLanguage();
+        });
     </script>
 </body>
 </html>
