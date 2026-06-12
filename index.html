@@ -131,6 +131,9 @@
                 <div class="screenshot-item">
                     <img data-asset="mine" alt="" data-alt-zh="个人中心" data-alt-en="Profile" class="screenshot-img adaptive-asset">
                 </div>
+                <div class="screenshot-item">
+                    <img data-asset="widgets" alt="" data-alt-zh="小组件" data-alt-en="Widgets" class="screenshot-img adaptive-asset">
+                </div>
             </div>
         </div>
     </section>
@@ -205,11 +208,12 @@
         var ICON_EXT = { light: 'jpg', dark: 'png' };
         // 截图按 theme/lang 区分
         var ASSET_EXT = {
-            main:         { light: { zh: 'jpg', en: 'svg' }, dark: { zh: 'jpg', en: 'jpg' } },
-            add_schedule: { light: { zh: 'jpg', en: 'svg' }, dark: { zh: 'jpg', en: 'jpg' } },
-            focus:        { light: { zh: 'jpg', en: 'svg' }, dark: { zh: 'jpg', en: 'jpg' } },
-            insight:      { light: { zh: 'jpg', en: 'svg' }, dark: { zh: 'jpg', en: 'jpg' } },
-            mine:         { light: { zh: 'jpg', en: 'svg' }, dark: { zh: 'jpg', en: 'jpg' } }
+            main:         { light: { zh: 'jpg', en: 'png' }, dark: { zh: 'png', en: 'png' } },
+            add_schedule: { light: { zh: 'jpg', en: 'png' }, dark: { zh: 'png', en: 'png' } },
+            focus:        { light: { zh: 'jpg', en: 'png' }, dark: { zh: 'png', en: 'png' } },
+            insight:      { light: { zh: 'jpg', en: 'png' }, dark: { zh: 'png', en: 'png' } },
+            mine:         { light: { zh: 'jpg', en: 'png' }, dark: { zh: 'png', en: 'png' } },
+            widgets:      { light: { zh: 'png', en: 'png' }, dark: { zh: 'png', en: 'png' } }
         };
 
         // 根据资源名、主题、语言构建路径
