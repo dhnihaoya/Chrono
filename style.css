@@ -6,58 +6,185 @@
 }
 
 :root {
-    /* 主色调：温暖棕色系 */
-    --primary-color: #735A33;
-    --secondary-color: #4F3422;
-    --accent-color: #926247;
-    
-    /* 功能色 */
-    --success-color: #00FF00;
-    --info-color: #0000FF;
-    --warning-color: #FFFF00;
-    --purple-color: #800080;
-    --pink-color: #FFC0CB;
-    --indigo-color: #4B0082;
-    
-    /* 情感色 */
-    --empathy-orange: #F07119;
-    --present-red: #F43F5E;
-    --zen-yellow: #F2B700;
-    --reflection-blue: #60A5FA;
-    --calm-green: #9BB167;
-    
-    /* 文本和背景色 */
+    /* ===== 背景色 ===== */
+    --bg-primary: #F6F6F6;
+    --bg-card: #FFFFFF;
+    --bg-section: #F5F5F5;
+    --bg-soft: #F7F4F2;
+    --bg-control: #F5F0EB;
+    --bg-popup: #FFFFFF;
+    --bg-overlay: rgba(0, 0, 0, 0.35);
+    --bg-footer: #4F3422;
+
+    /* ===== 文字色 ===== */
     --text-primary: #4F3422;
     --text-secondary: #735A33;
-    --bg-light: #F5F5F5;
-    --bg-section: #F5F5F5;
-    --bg-card: #ffffff;
-    
-    /* 阴影和效果 */
+    --text-tertiary: #C9C7C5;
+    --text-placeholder: #808080;
+    --text-on-accent: #FFFFFF;
+
+    /* ===== 品牌主色 - 棕色系 ===== */
+    --brand-brown: #735233;
+    --brand-brown-dark: #4F3422;
+    --brand-brown-accent: #926247;
+    --brand-brown-light: #D9CCB8;
+
+    /* ===== 品牌主色 - 绿色系 ===== */
+    --brand-green: #9BB167;
+    --brand-green-dark: #8A9E59;
+    --brand-green-light: #E8F0DB;
+
+    /* ===== 品牌主色 - 橙色系 ===== */
+    --brand-orange: #FAB06B;
+    --brand-orange-light: #FCF5F0;
+
+    /* ===== 功能色 ===== */
+    --color-red: #F24336;
+    --color-yellow: #FFCC66;
+    --color-blue: #6699FF;
+    --color-purple: #BD93F9;
+    --color-chart-blue: #59A6E3;
+    --color-tag: #FA738C;
+
+    /* ===== 灰度 ===== */
+    --gray-10: #F7F7F7;
+    --gray-30: #D9D9D9;
+    --gray-40: #BFBFBF;
+    --gray-60: #999999;
+
+    /* ===== UI 元素 ===== */
+    --border: rgba(115, 82, 51, 0.10);
+    --border-strong: rgba(115, 82, 51, 0.18);
     --shadow: 0 4px 20px rgba(115, 90, 51, 0.15);
     --shadow-hover: 0 10px 40px rgba(115, 90, 51, 0.25);
+    --shadow-focus: 0 0 0 3px rgba(146, 98, 71, 0.2);
+    --btn-primary: #735233;
+    --btn-primary-hover: #4F3422;
+    --btn-secondary-bg: #FFFFFF;
+    --btn-secondary-border: rgba(115, 90, 51, 0.18);
+    --btn-secondary-shadow: 0 4px 18px rgba(115, 90, 51, 0.1);
+    --shadow-screenshot: 0 20px 60px rgba(0, 0, 0, 0.15);
+    --shadow-screenshot-hover: 0 25px 80px rgba(0, 0, 0, 0.2);
     --radius: 16px;
     --transition: all 0.3s ease;
+
+    /* ===== Hero 渐变 ===== */
+    --hero-gradient: linear-gradient(135deg, #F6F6F6 0%, rgba(115, 90, 51, 0.05) 100%);
+
+    /* ===== 交互高亮 ===== */
+    --highlight-bg: rgba(115, 90, 51, 0.3);
+    --select-hover-bg: var(--brand-brown);
+    --select-hover-text: #FFFFFF;
+    --icon-active-border: var(--brand-brown);
+    --text-link: var(--brand-brown);
+    --interactive-border: var(--brand-brown);
+    --interactive-outline: var(--brand-brown-accent);
+    --title-gradient: linear-gradient(135deg, #735233, #926247);
+    --footer-text: #FFFFFF;
+    --interactive-border: var(--brand-brown);
+    --interactive-outline: var(--brand-brown-accent);
+    --title-gradient: linear-gradient(135deg, #735233, #926247);
+
+    /* ===== FAQ ===== */
+    --faq-bg: var(--bg-section);
+
+    /* ===== 滚动条 ===== */
+    --scrollbar-track: rgba(0, 0, 0, 0.05);
+    --scrollbar-thumb: var(--brand-brown);
 }
 
+/* ===== Dracula 深色主题 ===== */
 html[data-preview-theme="dark"] {
-    --primary-color: #39FF14;
-    --secondary-color: #2ED105;
-    --accent-color: #FFB86C;
+    /* 背景色 */
+    --bg-primary: #282A36;
+    --bg-card: #313340;
+    --bg-section: #282A36;
+    --bg-soft: #383A4D;
+    --bg-control: #383A4D;
+    --bg-popup: #313340;
+    --bg-overlay: rgba(0, 0, 0, 0.50);
+    --bg-footer: #191A21;
+
+    /* 文字色 */
     --text-primary: #F2F2F7;
     --text-secondary: #C7C7CC;
-    --bg-light: #282A36;
-    --bg-section: #282A36;
-    --bg-card: #313340;
+    --text-tertiary: #8E8E93;
+    --text-placeholder: #75757F;
+    --text-on-accent: #282A36;
+
+    /* 品牌主色 - 棕色系（适配深色） */
+    --brand-brown: #BD947A;
+    --brand-brown-dark: #D9B79E;
+    --brand-brown-accent: #FFB86C;
+    --brand-brown-light: #594A42;
+
+    /* 品牌主色 - 绿色系（荧光绿） */
+    --brand-green: #39FF14;
+    --brand-green-dark: #2ED10A;
+    --brand-green-light: rgba(57, 255, 20, 0.18);
+
+    /* 品牌主色 - 橙色系 */
+    --brand-orange: #FFB86C;
+    --brand-orange-light: rgba(255, 184, 108, 0.15);
+
+    /* 功能色 */
+    --color-red: #FF5555;
+    --color-yellow: #F1FA8C;
+    --color-blue: #6699FF;
+    --color-purple: #BD93F9;
+    --color-chart-blue: #8BE9FD;
+    --color-tag: #FF79C6;
+
+    /* 灰度 */
+    --gray-10: #3D3E4D;
+    --gray-30: #666876;
+    --gray-40: #80828F;
+    --gray-60: #9EA1AD;
+
+    /* UI 元素 */
+    --border: rgba(255, 255, 255, 0.12);
+    --border-strong: rgba(255, 255, 255, 0.18);
     --shadow: 0 4px 22px rgba(0, 0, 0, 0.3);
     --shadow-hover: 0 10px 42px rgba(57, 255, 20, 0.18);
+    --shadow-focus: 0 0 0 3px rgba(255, 184, 108, 0.25);
+    --btn-primary: #39FF14;
+    --btn-primary-hover: #2ED10A;
+    --btn-secondary-bg: #313340;
+    --btn-secondary-border: rgba(255, 255, 255, 0.12);
+    --btn-secondary-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+    --shadow-screenshot: 0 20px 60px rgba(0, 0, 0, 0.15);
+    --shadow-screenshot-hover: 0 25px 80px rgba(0, 0, 0, 0.2);
+
+    /* Hero 渐变 */
+    --hero-gradient: linear-gradient(135deg, #282A36 0%, #313340 100%);
+
+    /* 交互高亮 */
+    --highlight-bg: rgba(57, 255, 20, 0.16);
+    --select-hover-bg: #39FF14;
+    --select-hover-text: #282A36;
+    --icon-active-border: #39FF14;
+    --text-link: #39FF14;
+    --interactive-border: #39FF14;
+    --interactive-outline: #39FF14;
+    --title-gradient: linear-gradient(135deg, #39FF14, #FFB86C);
+    --footer-text: #F2F2F7;
+    --interactive-border: #39FF14;
+    --interactive-outline: #39FF14;
+    --title-gradient: linear-gradient(135deg, #39FF14, #FFB86C);
+
+    /* FAQ */
+    --faq-bg: #3D3E4C;
+
+    /* 滚动条 */
+    --scrollbar-track: rgba(0, 0, 0, 0.1);
+    --scrollbar-thumb: #39FF14;
 }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-primary);
-    background: var(--bg-light);
+    background: var(--bg-primary);
     overflow-x: hidden;
 }
 
@@ -77,7 +204,7 @@ body {
 
 .language-switcher select {
     background: var(--bg-card);
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--interactive-border);
     border-radius: 12px;
     padding: 8px 12px;
     font-size: 14px;
@@ -91,21 +218,21 @@ body {
 }
 
 .language-switcher select:hover {
-    background: var(--primary-color);
-    color: white;
-    box-shadow: 0 6px 25px rgba(115, 90, 51, 0.3);
+    background: var(--select-hover-bg);
+    color: var(--select-hover-text);
+    box-shadow: var(--shadow-hover);
 }
 
 .language-switcher select:focus {
     outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(146, 98, 71, 0.2);
+    border-color: var(--interactive-outline);
+    box-shadow: var(--shadow-focus);
 }
 
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #F5F5F5 0%, rgba(115, 90, 51, 0.05) 100%);
+    background: var(--hero-gradient);
     color: var(--text-primary);
     padding: 100px 20px;
     position: relative;
@@ -121,6 +248,10 @@ body {
     bottom: 0;
     background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(115,90,51,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
     opacity: 0.5;
+}
+
+html[data-preview-theme="dark"] .hero::before {
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(57,255,20,0.08)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
 }
 
 .hero .container {
@@ -148,13 +279,13 @@ body {
     max-width: 300px;
     height: auto;
     border-radius: 52px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-screenshot);
     transition: var(--transition);
 }
 
 .hero-screenshot:hover {
     transform: scale(1.05);
-    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-screenshot-hover);
 }
 
 .hero-content {
@@ -178,12 +309,8 @@ body {
 }
 
 .app-icon-option.active {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 4px rgba(115, 90, 51, 0.12);
-}
-
-html[data-preview-theme="dark"] .app-icon-option.active {
-    box-shadow: 0 0 0 4px rgba(57, 255, 20, 0.16);
+    border-color: var(--icon-active-border);
+    box-shadow: 0 0 0 4px var(--highlight-bg);
 }
 
 .app-icon-option:hover {
@@ -191,7 +318,7 @@ html[data-preview-theme="dark"] .app-icon-option.active {
 }
 
 .app-icon-option:focus-visible {
-    outline: 3px solid var(--accent-color);
+    outline: 3px solid var(--interactive-outline);
     outline-offset: 4px;
 }
 
@@ -208,33 +335,12 @@ html[data-preview-theme="dark"] .app-icon-option.active {
     box-shadow: var(--shadow-hover);
 }
 
-html[data-preview-theme="dark"] .hero {
-    background: linear-gradient(135deg, #282A36 0%, #313340 100%);
-}
-
-html[data-preview-theme="dark"] .hero::before {
-    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(57,255,20,0.08)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-}
-
-html[data-preview-theme="dark"] .feature-card,
-html[data-preview-theme="dark"] .support-card {
-    background: var(--bg-card);
-}
-
-html[data-preview-theme="dark"] .faq-list details {
-    background: #3D3E4C;
-}
-
-html[data-preview-theme="dark"] footer {
-    background: #191A21;
-}
-
 .hero h1 {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 20px;
     letter-spacing: -2px;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: var(--title-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -245,6 +351,7 @@ html[data-preview-theme="dark"] footer {
     font-weight: 600;
     margin-bottom: 15px;
     color: var(--text-primary);
+    -webkit-text-fill-color: var(--text-primary);
 }
 
 .subtitle {
@@ -274,26 +381,26 @@ html[data-preview-theme="dark"] footer {
 }
 
 .btn-primary {
-    background: var(--primary-color);
-    color: white;
+    background: var(--btn-primary);
+    color: var(--text-on-accent);
     box-shadow: var(--shadow);
 }
 
 .btn-primary:hover {
-    background: var(--secondary-color);
+    background: var(--btn-primary-hover);
     transform: translateY(-3px);
     box-shadow: var(--shadow-hover);
 }
 
 .btn-secondary {
-    background: white;
-    color: var(--primary-color);
-    border: 2px solid rgba(115, 90, 51, 0.18);
-    box-shadow: 0 4px 18px rgba(115, 90, 51, 0.1);
+    background: var(--btn-secondary-bg);
+    color: var(--text-link);
+    border: 2px solid var(--btn-secondary-border);
+    box-shadow: var(--btn-secondary-shadow);
 }
 
 .btn-secondary:hover {
-    border-color: var(--primary-color);
+    border-color: var(--text-link);
     transform: translateY(-3px);
     box-shadow: var(--shadow-hover);
 }
@@ -301,7 +408,7 @@ html[data-preview-theme="dark"] footer {
 /* Features Section */
 .features {
     padding: 100px 20px;
-    background: var(--bg-light);
+    background: var(--bg-primary);
 }
 
 .features h2 {
@@ -319,7 +426,7 @@ html[data-preview-theme="dark"] footer {
 }
 
 .feature-card {
-    background: white;
+    background: var(--bg-card);
     padding: 40px 30px;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
@@ -360,6 +467,7 @@ html[data-preview-theme="dark"] footer {
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 60px;
+    color: var(--text-primary);
 }
 
 .screenshots-carousel {
@@ -376,12 +484,12 @@ html[data-preview-theme="dark"] footer {
 }
 
 .screenshots-carousel::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.05);
+    background: var(--scrollbar-track);
     border-radius: 4px;
 }
 
 .screenshots-carousel::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
+    background: var(--scrollbar-thumb);
     border-radius: 4px;
 }
 
@@ -407,7 +515,7 @@ html[data-preview-theme="dark"] footer {
 /* Support Section */
 .support {
     padding: 100px 20px;
-    background: var(--bg-light);
+    background: var(--bg-primary);
 }
 
 .support h2 {
@@ -415,6 +523,7 @@ html[data-preview-theme="dark"] footer {
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 60px;
+    color: var(--text-primary);
 }
 
 .support-content {
@@ -426,7 +535,7 @@ html[data-preview-theme="dark"] footer {
 }
 
 .support-card {
-    background: white;
+    background: var(--bg-card);
     padding: 40px;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
@@ -445,7 +554,7 @@ html[data-preview-theme="dark"] footer {
 
 .support-link {
     display: block;
-    color: var(--primary-color);
+    color: var(--text-link);
     text-decoration: none;
     font-weight: 500;
     margin-top: 10px;
@@ -453,7 +562,7 @@ html[data-preview-theme="dark"] footer {
 }
 
 .support-link:hover {
-    color: var(--accent-color);
+    color: var(--interactive-outline);
 }
 
 .faq-list {
@@ -463,7 +572,7 @@ html[data-preview-theme="dark"] footer {
 .faq-list details {
     margin-bottom: 15px;
     padding: 15px;
-    background: var(--bg-section);
+    background: var(--faq-bg);
     border-radius: 8px;
     cursor: pointer;
 }
@@ -497,8 +606,8 @@ html[data-preview-theme="dark"] footer {
 
 /* Footer */
 footer {
-    background: var(--text-primary);
-    color: white;
+    background: var(--bg-footer);
+    color: var(--footer-text);
     padding: 40px 20px;
     text-align: center;
 }
@@ -516,7 +625,7 @@ footer p {
 }
 
 .footer-links a {
-    color: white;
+    color: var(--footer-text);
     text-decoration: none;
     opacity: 0.8;
     transition: var(--transition);
@@ -582,7 +691,7 @@ footer p {
         top: 15px;
         right: 15px;
     }
-    
+
     .language-switcher select {
         padding: 6px 10px;
         font-size: 12px;
