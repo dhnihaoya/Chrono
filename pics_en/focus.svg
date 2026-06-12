@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="600" viewBox="0 0 300 600" role="img" aria-labelledby="title desc">
+    <title id="title">English screenshot placeholder</title>
+    <desc id="desc">Placeholder for the localized Chrono focus mode screenshot.</desc>
+    <rect width="300" height="600" rx="52" fill="#F5F5F5"/>
+    <rect x="28" y="52" width="244" height="496" rx="32" fill="#FFFFFF" stroke="#D8D0C2" stroke-width="2"/>
+    <circle cx="150" cy="220" r="82" fill="#EFE8DD" stroke="#735A33" stroke-width="10"/>
+    <circle cx="150" cy="220" r="48" fill="#FFFFFF"/>
+    <rect x="82" y="338" width="136" height="20" rx="10" fill="#735A33" opacity="0.85"/>
+    <rect x="72" y="386" width="156" height="48" rx="24" fill="#926247"/>
+</svg>

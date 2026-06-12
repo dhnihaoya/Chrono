@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="600" viewBox="0 0 300 600" role="img" aria-labelledby="title desc">
+    <title id="title">English screenshot placeholder</title>
+    <desc id="desc">Placeholder for the localized Chrono add task screenshot.</desc>
+    <rect width="300" height="600" rx="52" fill="#F5F5F5"/>
+    <rect x="28" y="52" width="244" height="496" rx="32" fill="#FFFFFF" stroke="#D8D0C2" stroke-width="2"/>
+    <rect x="54" y="92" width="132" height="18" rx="9" fill="#735A33" opacity="0.85"/>
+    <rect x="54" y="142" width="192" height="44" rx="14" fill="#EFE8DD"/>
+    <rect x="54" y="206" width="192" height="44" rx="14" fill="#EFE8DD"/>
+    <rect x="54" y="270" width="192" height="44" rx="14" fill="#EFE8DD"/>
+    <rect x="54" y="348" width="92" height="36" rx="18" fill="#926247"/>
+    <rect x="154" y="348" width="92" height="36" rx="18" fill="#C8BBA7"/>
+</svg>

@@ -1,62 +1,58 @@
-# Chrono — 时间线任务管理
+# Chrono - 时间线任务管理
 
-[![GitHub Pages](https://img.shields.io/badge/Website-Live-735A33?logo=githubpages)](https://dhnihaoya.github.io/ChronoWebsite/)
+[![Website](https://img.shields.io/badge/Website-Visit-735A33?logo=githubpages)](https://dhnihaoya.github.io/Chrono/)
+[![Support](https://img.shields.io/badge/Support-GitHub%20Issues-4F3422?logo=github)](https://github.com/dhnihaoya/ChronoWebsite/issues)
 
-Chrono 是一款 iOS 应用，采用**时间线视图**来组织日常任务与提醒，让每一刻都井然有序。
+Chrono 是一款面向 iPhone 的时间线任务管理应用。它把日程、提醒事项、专注记录和时间洞察放在同一条清晰的时间线上，帮助你更自然地规划今天、回顾过去，并持续优化自己的时间分配。
 
-本项目是 Chrono 的**官方网站**，托管于 GitHub Pages，用于 App Store 技术支持、营销展示以及隐私政策和使用条款的公开页面。
+**访问官网：** <https://dhnihaoya.github.io/Chrono/>
 
-👉 **[在线访问](https://dhnihaoya.github.io/ChronoWebsite/)**
+**UI 设计联系：** [1176180038@qq.com](mailto:1176180038@qq.com)
 
----
+## 为什么选择 Chrono
+
+很多任务管理工具把待办、日历、提醒和专注记录分散在不同入口。Chrono 的核心思路是把它们重新组织成一条时间线：你可以直观看到今天要做什么、每件事发生在什么时候、哪些任务已经完成，以及自己的时间被投入到了哪里。
+
+Chrono 适合想要用更少整理成本管理日程、提醒事项和专注时间的用户。
 
 ## 功能亮点
 
-- 🌍 **多语言支持**：自动检测浏览器语言，支持中文/英文切换
-- 📱 **响应式设计**：完美适配桌面、平板和手机
-- 🎨 **现代化设计**：与 Chrono 应用风格保持一致
-- 🖼️ **真实截图**：集成应用实际截图展示
-- ⚡ **流畅动画**：悬停效果和过渡动画
+- **时间线视图**：按时间组织日程、提醒和任务状态，让一天的安排更直观。
+- **日程与提醒管理**：支持分类、标签、备注、完成状态以及不同时间类型的任务。
+- **Apple 生态集成**：可与 Apple 日历和提醒事项协同使用。
+- **专注模式**：记录专注时段，并将专注成果沉淀为可回顾的数据。
+- **数据洞察**：通过统计视图理解时间分配和使用习惯。
+- **快捷计时小组件**：在主屏幕快速启动常用专注项目。
+- **Live Activity**：在进行中的专注会话里获得更轻量的状态提醒。
+- **深色模式与本地化**：支持深色模式和多语言界面，适配不同使用环境与语言偏好。
 
-## 应用截图
+## 应用预览
 
-| 主页面 | 添加任务 | 专注模式 | 数据洞察 | 个人中心 |
-|--------|----------|----------|----------|----------|
-| ![main](pics_cn/main.jpg) | ![add_schedule](pics_cn/add_schedule.jpg) | ![focus](pics_cn/focus.jpg) | ![insight](pics_cn/insight.jpg) | ![mine](pics_cn/mine.jpg) |
+| 首页时间线 | 添加任务 | 专注模式 | 数据洞察 | 个人中心 |
+| --- | --- | --- | --- | --- |
+| ![Chrono 首页时间线](pics_cn/main.jpg) | ![Chrono 添加任务](pics_cn/add_schedule.jpg) | ![Chrono 专注模式](pics_cn/focus.jpg) | ![Chrono 数据洞察](pics_cn/insight.jpg) | ![Chrono 个人中心](pics_cn/mine.jpg) |
 
-## 本地预览
+## 技术支持与反馈
 
-本项目为纯静态网站，无需构建。在本地启动任意静态文件服务器即可：
+如果你在使用 Chrono 或访问官网时遇到问题，欢迎优先通过 GitHub Issue 反馈：
 
-```bash
-python3 -m http.server 8000
-```
+- [提交使用问题或功能建议](https://github.com/dhnihaoya/ChronoWebsite/issues)
+- 技术支持邮箱：<chronoapp@163.com>
+- UI 设计联系：<1176180038@qq.com>
 
-然后在浏览器中访问 `http://localhost:8000`。
+提交 Issue 时，建议包含以下信息，方便定位问题：
 
-## GitHub Pages 部署
-
-1. 进入 GitHub 仓库页面，点击 `Settings`
-2. 在左侧菜单中找到 `Pages`
-3. 在 `Build and deployment` 部分：
-   - Source: 选择 `Deploy from a branch`
-   - Branch: 选择 `main` 分支，目录选择 `/`
-   - 点击 `Save` 保存
-4. 等待几分钟后，网站将发布在 `https://dhnihaoya.github.io/ChronoWebsite/`
-
-## 问题反馈
-
-如果你在使用 Chrono 或访问网站时遇到任何问题、发现错误，或有功能建议，欢迎通过以下方式联系我们：
-
-- 🐛 **提交 GitHub Issue**：请在 [Issues](https://github.com/dhnihaoya/ChronoWebsite/issues) 页面创建新的 Issue，描述你遇到的问题或建议
-- 📧 **发送邮件**：[chronoapp@163.com](mailto:chronoapp@163.com)
+- 你遇到的问题或期望的改进。
+- 操作步骤、截图或录屏。
+- iOS 版本、设备型号，以及 Chrono 版本号。
 
 ## 隐私与条款
 
-- [隐私政策](https://dhnihaoya.github.io/ChronoWebsite/privacy.html)
-- [使用条款](https://dhnihaoya.github.io/ChronoWebsite/terms.html)
+- [隐私政策](https://dhnihaoya.github.io/Chrono/privacy.html)
+- [使用条款](https://dhnihaoya.github.io/Chrono/terms.html)
 
-## 致谢
+Chrono 尊重用户隐私。根据当前隐私政策，应用不收集个人信息，不使用第三方分析或广告追踪，任务数据保存在用户设备本地。
 
-- 由 Chrono 团队维护
-- 使用 GitHub Pages 托管
+## 关于这个网站
+
+本仓库用于维护 Chrono 的官方网站、技术支持页面、隐私政策和使用条款。网站为纯静态页面，通过 GitHub Pages 发布。
