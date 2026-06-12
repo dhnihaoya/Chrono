@@ -1,8 +1,7 @@
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/dark/icon.png">
-    <img src="assets/light/icon.png" alt="Chrono App Icon" width="108">
-  </picture>
+  <img src="assets/light/icon.png" alt="Chrono Light App Icon" width="88">
+  &nbsp;&nbsp;
+  <img src="assets/dark/icon.png" alt="Chrono Dracula App Icon" width="88">
 </p>
 
 <h1 align="center">Chrono</h1>
@@ -30,22 +29,7 @@
 </p>
 
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/dark/zh/main.png">
-    <img src="assets/light/zh/main.jpg" alt="Chrono 时间线视图" width="230">
-  </picture>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/dark/zh/focus.png">
-    <img src="assets/light/zh/focus.jpg" alt="Chrono 专注模式" width="230">
-  </picture>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/dark/zh/widgets.png">
-    <img src="assets/light/zh/widgets.png" alt="Chrono 小组件" width="230">
-  </picture>
-</p>
-
-<p align="center">
-  <sub>截图会跟随浏览器深浅色显示偏好自动切换。</sub>
+  <sub>Light · Dracula · Timeline-first productivity for iPhone</sub>
 </p>
 
 ---
@@ -80,13 +64,15 @@ Chrono 是一款面向 iPhone 的时间线任务管理应用。它把待办、�
 
 ### 应用预览
 
+截图会跟随浏览器深浅色显示偏好自动切换。
+
 | 时间线 | 添加任务 | 数据洞察 |
 | --- | --- | --- |
-| <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/zh/main.png"><img src="assets/light/zh/main.jpg" alt="Chrono 中文时间线" width="220"></picture> | <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/zh/add_schedule.png"><img src="assets/light/zh/add_schedule.jpg" alt="Chrono 中文添加任务" width="220"></picture> | <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/zh/insight.png"><img src="assets/light/zh/insight.jpg" alt="Chrono 中文数据洞察" width="220"></picture> |
+| <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/zh/main.png"><img src="assets/light/zh/main.jpg" alt="Chrono 中文时间线" width="180"></picture> | <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/zh/add_schedule.png"><img src="assets/light/zh/add_schedule.jpg" alt="Chrono 中文添加任务" width="180"></picture> | <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/zh/insight.png"><img src="assets/light/zh/insight.jpg" alt="Chrono 中文数据洞察" width="180"></picture> |
 
 | 专注 | 个人中心 | 小组件 |
 | --- | --- | --- |
-| <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/zh/focus.png"><img src="assets/light/zh/focus.jpg" alt="Chrono 中文专注模式" width="220"></picture> | <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/zh/mine.png"><img src="assets/light/zh/mine.jpg" alt="Chrono 中文个人中心" width="220"></picture> | <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/zh/widgets.png"><img src="assets/light/zh/widgets.png" alt="Chrono 中文小组件" width="220"></picture> |
+| <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/zh/focus.png"><img src="assets/light/zh/focus.jpg" alt="Chrono 中文专注模式" width="180"></picture> | <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/zh/mine.png"><img src="assets/light/zh/mine.jpg" alt="Chrono 中文个人中心" width="180"></picture> | <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/zh/widgets.png"><img src="assets/light/zh/widgets.png" alt="Chrono 中文小组件" width="180"></picture> |
 
 ### 下载与反馈
 
@@ -137,13 +123,15 @@ Many productivity tools show how many tasks you have. Chrono focuses on how thos
 
 ### Preview
 
+Screenshots follow the browser's light or dark display preference automatically.
+
 | Timeline | Add Task | Insights |
 | --- | --- | --- |
-| <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/en/main.png"><img src="assets/light/en/main.png" alt="Chrono English timeline" width="220"></picture> | <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/en/add_schedule.png"><img src="assets/light/en/add_schedule.png" alt="Chrono English add task" width="220"></picture> | <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/en/insight.png"><img src="assets/light/en/insight.png" alt="Chrono English insights" width="220"></picture> |
+| <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/en/main.png"><img src="assets/light/en/main.png" alt="Chrono English timeline" width="180"></picture> | <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/en/add_schedule.png"><img src="assets/light/en/add_schedule.png" alt="Chrono English add task" width="180"></picture> | <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/en/insight.png"><img src="assets/light/en/insight.png" alt="Chrono English insights" width="180"></picture> |
 
 | Focus | Profile | Widgets |
 | --- | --- | --- |
-| <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/en/focus.png"><img src="assets/light/en/focus.png" alt="Chrono English focus mode" width="220"></picture> | <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/en/mine.png"><img src="assets/light/en/mine.png" alt="Chrono English profile" width="220"></picture> | <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/en/widgets.png"><img src="assets/light/en/widgets.png" alt="Chrono English widgets" width="220"></picture> |
+| <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/en/focus.png"><img src="assets/light/en/focus.png" alt="Chrono English focus mode" width="180"></picture> | <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/en/mine.png"><img src="assets/light/en/mine.png" alt="Chrono English profile" width="180"></picture> | <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/en/widgets.png"><img src="assets/light/en/widgets.png" alt="Chrono English widgets" width="180"></picture> |
 
 ### Download and Support
 
