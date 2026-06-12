@@ -1,134 +1,62 @@
-# Chrono GitHub Pages 设置指南
+# Chrono — 时间线任务管理
 
-这个目录包含 Chrono 应用的官方网站文件，用于 App Store 的技术支持和营销页面。
+[![GitHub Pages](https://img.shields.io/badge/Website-Live-735A33?logo=githubpages)](https://dhnihaoya.github.io/ChronoWebsite/)
 
-## 文件结构
+Chrono 是一款 iOS 应用，采用**时间线视图**来组织日常任务与提醒，让每一刻都井然有序。
 
-```
-docs/
-├── index.html       # 主页面（支持中英文切换）
-├── style.css        # 样式文件
-├── privacy.html     # 隐私政策（支持中英文切换）
-├── terms.html       # 使用条款（支持中英文切换）
-├── pics_cn/         # 中文版应用截图
-│   ├── Icon-1024.jpg
-│   ├── main.jpg
-│   ├── add_schedule.jpg
-│   ├── focus.jpg
-│   ├── insight.jpg
-│   └── mine.jpg
-└── README.md        # 本文件
-```
+本项目是 Chrono 的**官方网站**，托管于 GitHub Pages，用于 App Store 技术支持、营销展示以及隐私政策和使用条款的公开页面。
 
-## ✨ 新功能特性
+👉 **[在线访问](https://dhnihaoya.github.io/ChronoWebsite/)**
+
+---
+
+## 功能亮点
 
 - 🌍 **多语言支持**：自动检测浏览器语言，支持中文/英文切换
-- 📱 **响应式设计**：完美适配桌面、平板、手机
+- 📱 **响应式设计**：完美适配桌面、平板和手机
 - 🎨 **现代化设计**：与 Chrono 应用风格保持一致
 - 🖼️ **真实截图**：集成应用实际截图展示
 - ⚡ **流畅动画**：悬停效果和过渡动画
 
-## 启用 GitHub Pages
+## 应用截图
 
-1. 进入你的 GitHub 仓库页面
-2. 点击 `Settings`（设置）
-3. 在左侧菜单中找到 `Pages`
-4. 在 `Build and deployment` 部分：
-   - Source: 选择 `Deploy from a branch`
-   - Branch: 选择 `main` 分支，目录选择 `/docs`
-   - 点击 `Save` 保存
-5. 等待几分钟，你的网站将会发布在 `https://[你的用户名].github.io/Chrono/`
+| 主页面 | 添加任务 | 专注模式 | 数据洞察 | 个人中心 |
+|--------|----------|----------|----------|----------|
+| ![main](pics_cn/main.jpg) | ![add_schedule](pics_cn/add_schedule.jpg) | ![focus](pics_cn/focus.jpg) | ![insight](pics_cn/insight.jpg) | ![mine](pics_cn/mine.jpg) |
 
-## 自定义域名（可选）
+## 本地预览
 
-如果你想使用自己的域名：
-
-1. 在 `docs/` 目录下创建一个名为 `CNAME` 的文件（无扩展名）
-2. 在文件中写入你的域名，例如：`chrono.example.com`
-3. 在你的域名服务商处配置 DNS 记录：
-   - 添加一条 CNAME 记录指向 `[你的用户名].github.io`
-4. 在 GitHub Pages 设置中输入你的自定义域名
-
-## ✅ 已完成的内容
-
-### 图片资源集成
-
-✅ **应用图标**：`pics_cn/Icon-1024.jpg`
-✅ **Hero 主图**：`pics_cn/main.jpg` (主页面截图)
-✅ **功能截图**：已集成所有应用截图
-   - `pics_cn/main.jpg` (主页面)
-   - `pics_cn/add_schedule.jpg` (添加任务)
-   - `pics_cn/focus.jpg` (专注模式)
-   - `pics_cn/insight.jpg` (数据洞察)
-   - `pics_cn/mine.jpg` (个人中心)
-
-### 多语言支持
-
-✅ **自动语言检测**：根据浏览器语言自动选择中文或英文
-✅ **语言切换器**：右上角下拉菜单可手动切换语言
-✅ **本地存储**：记住用户的语言选择偏好
-✅ **完整翻译**：所有页面内容都支持中英文切换
-
-## 需要修改的内容
-
-### 联系邮箱
-
-✅ **已完成**：所有页面中的邮箱地址已更新为 `chronoapp@163.com`
-
-### App Store 链接
-
-应用上架后，在 `index.html` 中更新 App Store 下载链接：
-
-```html
-<a href="https://apps.apple.com/app/idXXXXXXXX" class="btn btn-primary">
-```
-
-### 元数据
-
-建议添加以下 meta 标签到 `index.html` 的 `<head>` 部分：
-
-```html
-<!-- Open Graph (社交媒体分享) -->
-<meta property="og:title" content="Chrono - 时间线任务管理">
-<meta property="og:description" content="优雅的时间线任务管理应用，让每一刻都井然有序">
-<meta property="og:image" content="https://[你的域名]/images/og-image.png">
-<meta property="og:url" content="https://[你的域名]">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Chrono - 时间线任务管理">
-<meta name="twitter:description" content="优雅的时间线任务管理应用，让每一刻都井然有序">
-<meta name="twitter:image" content="https://[你的域名]/images/og-image.png">
-```
-
-## 测试网站
-
-在本地测试网站：
+本项目为纯静态网站，无需构建。在本地启动任意静态文件服务器即可：
 
 ```bash
-cd docs
 python3 -m http.server 8000
 ```
 
-然后在浏览器中访问 `http://localhost:8000`
+然后在浏览器中访问 `http://localhost:8000`。
 
-## App Store 配置
+## GitHub Pages 部署
 
-在 App Store Connect 中：
+1. 进入 GitHub 仓库页面，点击 `Settings`
+2. 在左侧菜单中找到 `Pages`
+3. 在 `Build and deployment` 部分：
+   - Source: 选择 `Deploy from a branch`
+   - Branch: 选择 `main` 分支，目录选择 `/`
+   - 点击 `Save` 保存
+4. 等待几分钟后，网站将发布在 `https://dhnihaoya.github.io/ChronoWebsite/`
 
-1. **技术支持网址**：填写你的 GitHub Pages 地址或自定义域名
-2. **营销网址**：同上
-3. **隐私政策网址**：`https://[你的域名]/privacy.html`
+## 问题反馈
 
-## 注意事项
+如果你在使用 Chrono 或访问网站时遇到任何问题、发现错误，或有功能建议，欢迎通过以下方式联系我们：
 
-- 确保所有图片经过优化，避免文件过大
-- 建议使用 WebP 格式以获得更好的性能
-- 定期更新隐私政策和使用条款的日期
-- 测试在不同设备上的显示效果（桌面、平板、手机）
+- 🐛 **提交 GitHub Issue**：请在 [Issues](https://github.com/dhnihaoya/ChronoWebsite/issues) 页面创建新的 Issue，描述你遇到的问题或建议
+- 📧 **发送邮件**：[chronoapp@163.com](mailto:chronoapp@163.com)
 
-## 参考资源
+## 隐私与条款
 
-- [GitHub Pages 官方文档](https://docs.github.com/pages)
-- [App Store Connect 帮助](https://help.apple.com/app-store-connect/)
+- [隐私政策](https://dhnihaoya.github.io/ChronoWebsite/privacy.html)
+- [使用条款](https://dhnihaoya.github.io/ChronoWebsite/terms.html)
 
+## 致谢
+
+- 由 Chrono 团队维护
+- 使用 GitHub Pages 托管
