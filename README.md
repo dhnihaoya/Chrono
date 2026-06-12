@@ -7,6 +7,8 @@ Chrono 是一款面向 iPhone 的时间线任务管理应用。它把日程、�
 
 **访问官网：** <https://dhnihaoya.github.io/Chrono/>
 
+**App Store 下载：** <https://apps.apple.com/cn/app/chrono/id6753885021>
+
 **UI设计：** 1176180038@qq.com
 
 ## 为什么选择 Chrono

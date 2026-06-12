@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Chrono - 优雅的时间线任务管理应用，让每一刻都井然有序">
     <title>Chrono - 时间线任务管理</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/light/icon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/light/icon-180.png">
     <link rel="stylesheet" href="style.css">
+    <script src="js/common.js"></script>
+    <script src="js/index.js"></script>
 </head>
 <body>
     <!-- 顶部控件：主题切换 + 语言选择 -->
@@ -40,7 +44,7 @@
                     <p class="tagline" data-zh="优雅的时间线任务管理 ⏰✨" data-en="Elegant Timeline Task Management ⏰✨">优雅的时间线任务管理 ⏰✨</p>
                     <p class="subtitle" data-zh="让每一刻都井然有序，用时间线重新定义待办事项" data-en="Organize every moment with timeline-based task management">让每一刻都井然有序，用时间线重新定义待办事项</p>
                     <div class="cta-buttons">
-                        <a href="#" class="btn btn-primary">
+                        <a href="https://apps.apple.com/cn/app/chrono/id6753885021" class="btn btn-primary">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
                             </svg>
@@ -198,155 +202,5 @@
         </div>
     </footer>
 
-    <script>
-        // ===== 全局状态 =====
-        var currentLang = 'zh';
-        var currentTheme = 'light';
-
-        // ===== 资源路径映射 =====
-        // icon 不跟语言走，直接放 assets/{theme}/icon.{ext}
-        var ICON_EXT = { light: 'jpg', dark: 'png' };
-        // 截图按 theme/lang 区分
-        var ASSET_EXT = {
-            main:         { light: { zh: 'jpg', en: 'png' }, dark: { zh: 'png', en: 'png' } },
-            add_schedule: { light: { zh: 'jpg', en: 'png' }, dark: { zh: 'png', en: 'png' } },
-            focus:        { light: { zh: 'jpg', en: 'png' }, dark: { zh: 'png', en: 'png' } },
-            insight:      { light: { zh: 'jpg', en: 'png' }, dark: { zh: 'png', en: 'png' } },
-            mine:         { light: { zh: 'jpg', en: 'png' }, dark: { zh: 'png', en: 'png' } },
-            widgets:      { light: { zh: 'png', en: 'png' }, dark: { zh: 'png', en: 'png' } }
-        };
-
-        // 根据资源名、主题、语言构建路径
-        function buildAssetPath(name, theme, lang) {
-            if (name === 'icon') {
-                return 'assets/' + theme + '/icon.' + (ICON_EXT[theme] || 'jpg');
-            }
-            var ext = (ASSET_EXT[name] && ASSET_EXT[name][theme] && ASSET_EXT[name][theme][lang])
-                      || 'jpg';
-            return 'assets/' + theme + '/' + lang + '/' + name + '.' + ext;
-        }
-
-        // ===== 图片更新 =====
-        function updateAllAssets() {
-            var imgs = document.querySelectorAll('.adaptive-asset');
-            imgs.forEach(function(img) {
-                var name = img.getAttribute('data-asset');
-                if (!name) return;
-                // Hero icon 按钮用固定主题（data-asset-theme），其余用当前主题
-                var theme = img.getAttribute('data-asset-theme') || currentTheme;
-                var path = buildAssetPath(name, theme, currentLang);
-                img.src = path;
-                var alt = img.getAttribute('data-alt-' + currentLang);
-                if (alt) img.alt = alt;
-            });
-        }
-
-        // 图片加载失败时降级到 light/同语言
-        function handleAssetError() {
-            var img = this;
-            // Hero icon 用固定主题，不需要降级
-            var fixedTheme = img.getAttribute('data-asset-theme');
-            if (fixedTheme) return;
-            if (currentTheme === 'light') return;
-            var name = img.getAttribute('data-asset');
-            if (!name) return;
-            // 防止重复降级
-            if (img.dataset.fallenBack) return;
-            img.dataset.fallenBack = '1';
-            img.src = buildAssetPath(name, 'light', currentLang);
-        }
-
-        // ===== 文字切换 =====
-        function updateTextContent(lang) {
-            var elements = document.querySelectorAll('[data-zh][data-en]');
-            elements.forEach(function(element) {
-                if (lang === 'zh') {
-                    element.textContent = element.getAttribute('data-zh');
-                } else {
-                    element.textContent = element.getAttribute('data-en');
-                }
-            });
-            document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-        }
-
-        // ===== 语言切换 =====
-        function switchLanguage(lang) {
-            currentLang = lang;
-            document.getElementById('languageSelect').value = lang;
-            updateTextContent(lang);
-            updateAllAssets();
-            try { localStorage.setItem('preferredLanguage', lang); } catch (e) {}
-        }
-
-        // ===== 主题切换 =====
-        function switchTheme(theme) {
-            currentTheme = theme;
-            document.documentElement.setAttribute('data-preview-theme', theme);
-            document.body.setAttribute('data-preview-theme', theme);
-
-            // 更新 Hero icon 按钮状态
-            var options = document.querySelectorAll('.app-icon-option');
-            options.forEach(function(option) {
-                var isActive = option.getAttribute('data-theme-option') === theme;
-                option.classList.toggle('active', isActive);
-                option.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-            });
-
-            // 清除降级标记，更新图片
-            document.querySelectorAll('.adaptive-asset').forEach(function(img) {
-                delete img.dataset.fallenBack;
-            });
-            updateAllAssets();
-
-            try { localStorage.setItem('preferredPreviewTheme', theme); } catch (e) {}
-        }
-
-        // ===== 主题切换按钮（右上角） =====
-        function toggleTheme() {
-            switchTheme(currentTheme === 'light' ? 'dark' : 'light');
-        }
-
-        // ===== 初始化 =====
-        function initSite() {
-            // 为所有 adaptive-asset 绑定降级处理
-            document.querySelectorAll('.adaptive-asset').forEach(function(img) {
-                img.addEventListener('error', handleAssetError);
-            });
-
-            // 恢复主题
-            var savedTheme = 'light';
-            try { savedTheme = localStorage.getItem('preferredPreviewTheme') || 'light'; } catch (e) {}
-            switchTheme(savedTheme);
-
-            // 恢复语言
-            var savedLang = null;
-            try { savedLang = localStorage.getItem('preferredLanguage'); } catch (e) {}
-            if (savedLang) {
-                switchLanguage(savedLang);
-            } else {
-                var browserLang = navigator.language || navigator.userLanguage || '';
-                var lang = browserLang.startsWith('zh') ? 'zh' : 'en';
-                switchLanguage(lang);
-            }
-
-            // 绑定事件
-            document.getElementById('languageSelect').addEventListener('change', function() {
-                switchLanguage(this.value);
-            });
-            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
-
-            // Hero icon 按钮点击
-            var controls = document.querySelector('.app-icon-options');
-            if (controls) {
-                controls.addEventListener('click', function(event) {
-                    var option = event.target.closest('.app-icon-option');
-                    if (!option) return;
-                    switchTheme(option.getAttribute('data-theme-option'));
-                });
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', initSite);
-    </script>
 </body>
 </html>
