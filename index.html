@@ -20,11 +20,16 @@
         <div class="container">
             <div class="hero-layout">
                 <div class="hero-image">
-                    <img src="pics_cn/main.jpg" data-src-zh="pics_cn/main.jpg" data-src-en="pics_en/main.svg" alt="Chrono 主页面" data-alt-zh="Chrono 主页面" data-alt-en="Chrono home timeline preview" class="hero-screenshot localized-screenshot">
+                    <img src="pics_cn/main.jpg" data-src-zh="pics_cn/main.jpg" data-src-en="pics_en/main.svg" data-src-dark-zh="pics_dark/main.jpg" data-src-dark-en="pics_dark/main_en.jpg" alt="Chrono 主页面" data-alt-zh="Chrono 主页面" data-alt-en="Chrono home timeline preview" class="hero-screenshot localized-screenshot">
                 </div>
                 <div class="hero-content">
-                    <div class="app-icon">
-                        <img src="pics_cn/Icon-1024.jpg" alt="Chrono App Icon" class="app-icon-img">
+                    <div class="app-icon-options" aria-label="Chrono appearance preview">
+                        <button type="button" class="app-icon-option active" data-theme-option="light" onclick="setPreviewTheme('light')" aria-label="浅色模式">
+                            <img src="pics_cn/Icon-1024.jpg" alt="Chrono 浅色 App Icon" class="app-icon-img">
+                        </button>
+                        <button type="button" class="app-icon-option" data-theme-option="dark" onclick="setPreviewTheme('dark')" aria-label="深色模式">
+                            <img src="pics_dark/Icon-Dark-1024.png" alt="Chrono 深色 App Icon" class="app-icon-img">
+                        </button>
                     </div>
                     <h1>Chrono</h1>
                     <p class="tagline" data-zh="优雅的时间线任务管理 ⏰✨" data-en="Elegant Timeline Task Management ⏰✨">优雅的时间线任务管理 ⏰✨</p>
@@ -36,9 +41,9 @@
                             </svg>
                             <span data-zh="App Store 下载" data-en="Download on App Store">App Store 下载</span>
                         </a>
-                        <a href="mailto:1176180038@qq.com" class="btn btn-secondary">
-                            <span data-zh="UI 设计联系" data-en="UI Design Contact">UI 设计联系</span>
-                        </a>
+                        <span class="btn btn-secondary">
+                            <span data-zh="UI设计：1176180038@qq.com" data-en="UI Design: 1176180038@qq.com">UI设计：1176180038@qq.com</span>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -94,8 +99,8 @@
 
                 <div class="feature-card">
                     <div class="feature-icon">🌓</div>
-                    <h3 data-zh="深色模式与本地化" data-en="Dark Mode & Localization">深色模式与本地化</h3>
-                    <p data-zh="支持深色模式和多语言界面，截图展示也会随网站语言切换" data-en="Supports dark mode and localized interfaces, with preview images switching by site language">支持深色模式和多语言界面，截图展示也会随网站语言切换</p>
+                    <h3 data-zh="浅色与吸血鬼模式" data-en="Light & Dracula Modes">浅色与吸血鬼模式</h3>
+                    <p data-zh="App 支持浅色外观和 Dracula 风格深色外观，适配白天和夜间使用" data-en="The app supports a light appearance and a Dracula-style dark appearance for day and night use">App 支持浅色外观和 Dracula 风格深色外观，适配白天和夜间使用</p>
                 </div>
             </div>
         </div>
@@ -107,19 +112,19 @@
             <h2 data-zh="应用预览" data-en="App Preview">应用预览</h2>
             <div class="screenshots-carousel">
                 <div class="screenshot-item">
-                    <img src="pics_cn/main.jpg" data-src-zh="pics_cn/main.jpg" data-src-en="pics_en/main.svg" alt="主页面" data-alt-zh="主页面" data-alt-en="Home timeline" class="screenshot-img localized-screenshot">
+                    <img src="pics_cn/main.jpg" data-src-zh="pics_cn/main.jpg" data-src-en="pics_en/main.svg" data-src-dark-zh="pics_dark/main.jpg" data-src-dark-en="pics_dark/main_en.jpg" alt="主页面" data-alt-zh="主页面" data-alt-en="Home timeline" class="screenshot-img localized-screenshot">
                 </div>
                 <div class="screenshot-item">
-                    <img src="pics_cn/add_schedule.jpg" data-src-zh="pics_cn/add_schedule.jpg" data-src-en="pics_en/add_schedule.svg" alt="添加任务" data-alt-zh="添加任务" data-alt-en="Add task" class="screenshot-img localized-screenshot">
+                    <img src="pics_cn/add_schedule.jpg" data-src-zh="pics_cn/add_schedule.jpg" data-src-en="pics_en/add_schedule.svg" data-src-dark-zh="pics_dark/add_schedule.jpg" data-src-dark-en="pics_dark/add_schedule_en.jpg" alt="添加任务" data-alt-zh="添加任务" data-alt-en="Add task" class="screenshot-img localized-screenshot">
                 </div>
                 <div class="screenshot-item">
-                    <img src="pics_cn/focus.jpg" data-src-zh="pics_cn/focus.jpg" data-src-en="pics_en/focus.svg" alt="专注模式" data-alt-zh="专注模式" data-alt-en="Focus mode" class="screenshot-img localized-screenshot">
+                    <img src="pics_cn/focus.jpg" data-src-zh="pics_cn/focus.jpg" data-src-en="pics_en/focus.svg" data-src-dark-zh="pics_dark/focus.jpg" data-src-dark-en="pics_dark/focus_en.jpg" alt="专注模式" data-alt-zh="专注模式" data-alt-en="Focus mode" class="screenshot-img localized-screenshot">
                 </div>
                 <div class="screenshot-item">
-                    <img src="pics_cn/insight.jpg" data-src-zh="pics_cn/insight.jpg" data-src-en="pics_en/insight.svg" alt="数据洞察" data-alt-zh="数据洞察" data-alt-en="Insights" class="screenshot-img localized-screenshot">
+                    <img src="pics_cn/insight.jpg" data-src-zh="pics_cn/insight.jpg" data-src-en="pics_en/insight.svg" data-src-dark-zh="pics_dark/insight.jpg" data-src-dark-en="pics_dark/insight_en.jpg" alt="数据洞察" data-alt-zh="数据洞察" data-alt-en="Insights" class="screenshot-img localized-screenshot">
                 </div>
                 <div class="screenshot-item">
-                    <img src="pics_cn/mine.jpg" data-src-zh="pics_cn/mine.jpg" data-src-en="pics_en/mine.svg" alt="个人中心" data-alt-zh="个人中心" data-alt-en="Profile" class="screenshot-img localized-screenshot">
+                    <img src="pics_cn/mine.jpg" data-src-zh="pics_cn/mine.jpg" data-src-en="pics_en/mine.svg" data-src-dark-zh="pics_dark/mine.jpg" data-src-dark-en="pics_dark/mine_en.jpg" alt="个人中心" data-alt-zh="个人中心" data-alt-en="Profile" class="screenshot-img localized-screenshot">
                 </div>
             </div>
         </div>
@@ -140,7 +145,7 @@
                 <div class="support-card">
                     <h3 data-zh="🎨 UI 设计" data-en="🎨 UI Design">🎨 UI 设计</h3>
                     <p data-zh="界面设计、视觉体验或合作沟通" data-en="Interface design, visual experience, and collaboration">界面设计、视觉体验或合作沟通</p>
-                    <a href="mailto:1176180038@qq.com" class="support-link">1176180038@qq.com</a>
+                    <span class="support-link">1176180038@qq.com</span>
                 </div>
 
                 <div class="support-card">
@@ -180,7 +185,7 @@
                 <a href="terms.html" data-zh="使用条款" data-en="Terms of Use">使用条款</a>
                 <a href="https://github.com/dhnihaoya/ChronoWebsite/issues" data-zh="提交 Issue" data-en="Submit Issue">提交 Issue</a>
                 <a href="mailto:chronoapp@163.com" data-zh="联系我们" data-en="Contact Us">联系我们</a>
-                <a href="mailto:1176180038@qq.com" data-zh="UI 设计" data-en="UI Design">UI 设计</a>
+                <span data-zh="UI设计：1176180038@qq.com" data-en="UI Design: 1176180038@qq.com">UI设计：1176180038@qq.com</span>
             </div>
         </div>
     </footer>
@@ -225,8 +230,20 @@
             });
         }
 
+        function setPreviewTheme(theme) {
+            document.body.setAttribute('data-preview-theme', theme);
+            const options = document.querySelectorAll('.app-icon-option');
+            options.forEach(option => {
+                option.classList.toggle('active', option.getAttribute('data-theme-option') === theme);
+            });
+            localStorage.setItem('preferredPreviewTheme', theme);
+        }
+
         // 页面加载时检测浏览器语言
         function detectLanguage() {
+            const savedTheme = localStorage.getItem('preferredPreviewTheme') || 'light';
+            setPreviewTheme(savedTheme);
+
             const savedLang = localStorage.getItem('preferredLanguage');
             if (savedLang) {
                 document.getElementById('languageSelect').value = savedLang;
