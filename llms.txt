@@ -1,0 +1,46 @@
+# Chrono
+
+> Chrono is a free, lightweight iOS/iPadOS productivity app that puts tasks, Apple Calendar, Apple Reminders, a focus timer, home-screen widgets, and time insights onto one timeline. Built with SwiftUI. No account, no tracking, no data collection — everything stays on-device and syncs only through the user's own Apple Calendar and Reminders (EventKit).
+
+> Chrono 是一款免费、轻量的 iPhone/iPad 效率 App，把任务、Apple 日历、提醒事项、专注计时、桌面小组件和时间洞察整合到同一条时间轴上。基于 SwiftUI 开发；无需账号、不追踪、不收集任何数据，所有内容保存在设备本地，仅通过用户自己的 Apple 日历和提醒事项（EventKit）同步。
+
+## At a glance
+- App name: Chrono (App Store listing copy also uses the name "ChronoTracker"; both refer to the same app)
+- Developer: 雨辰 沈 (dinghao)
+- Price: Free (免费)
+- Category: Productivity / 效率
+- Size: ~7.7 MB
+- Age rating: 4+
+- Platforms: iPhone (iOS 17.0+), iPad (iPadOS 17.0+), Mac (macOS 14.0+, Apple silicon), Apple Vision Pro (visionOS 1.0+)
+- Languages (8): English, Simplified Chinese, Traditional Chinese, French, German, Italian, Czech, Japanese
+- Privacy: Data Not Collected — no analytics, no ads, no third-party tracking SDKs. On-device storage via App Group UserDefaults + Apple EventKit (Calendar & Reminders). Confirmed by the App Store "Data Not Collected" privacy label.
+- Built with: SwiftUI, EventKit, WidgetKit, ActivityKit. Minimum iOS 17.
+
+## What it does
+- One timeline: tasks, calendar events, reminders, focus records, and statistics on a single chronological view. Supports all-day, point-in-time, ranged, and cross-day schedules.
+- Two-way Apple sync: full read/write with Apple Calendar and Apple Reminders through EventKit — no duplicate data entry.
+- Focus timer: start a focused-work session, then settle it into a quick record when done. An ActivityKit Live Activity shows on the Lock Screen and Dynamic Island while a session is running.
+- Home-screen widgets: configurable "Quick Timer" widgets in small and medium sizes, with palette options and widget-triggered focus sessions via `chrono://` deep links.
+- Insights: duration, hourly distribution, and focus-time analytics to review where time goes.
+- Customization: 3 themes (Light, Dracula, System) and 8 languages.
+
+## Why it's different
+Timeline-first: unlike list-based to-do apps or standalone timers, Chrono lays scheduled events, reminders, and focus records on the same time axis, so the whole day is visible at a glance. It is lightweight (~7.7 MB), native, private by default, and integrates with the system apps users already have (Apple Calendar, Reminders) instead of replacing them.
+
+## Search keywords / 关键词
+iPhone task manager, timeline planner, schedule app, Apple Calendar and Reminders integration, focus timer, concentration timer, time tracking, daily planner, productivity app, 番茄钟, 专注计时, 日程管理, 任务管理, 时间追踪, 效率 App, 时间线, 小组件, 日历同步, 提醒事项
+
+## Links
+- [App Store — Chrono](https://apps.apple.com/cn/app/chrono/id6753885021): free download. App ID 6753885021. Listed in the China (cn) App Store and other regions.
+- [Official website](https://dhnihaoya.github.io/Chrono/): features, screenshots, FAQ.
+- [Privacy Policy](https://dhnihaoya.github.io/Chrono/privacy.html)
+- [Terms of Use](https://dhnihaoya.github.io/Chrono/terms.html)
+- [Support & feedback (GitHub Issues)](https://github.com/dhnihaoya/Chrono/issues)
+
+## Support
+- Feedback channel: GitHub Issues (https://github.com/dhnihaoya/Chrono/issues) or chronoapp@163.com.
+- Developer contact: see the website footer.
+
+## Notes
+- This is the marketing site for the Chrono iOS app, not the source repository.
+- The app's App Store privacy label is "Data Not Collected."
