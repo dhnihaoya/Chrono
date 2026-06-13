@@ -79,12 +79,31 @@
         });
     }
 
+    // ===== 开发者联系方式（邮箱用 JS 拼接，HTML 中不出现完整地址，防低级爬虫抓取） =====
+    var DEV_EMAIL_USER = 'haoding1120';
+    var DEV_EMAIL_DOMAIN = 'gmail.com';
+
+    function devEmail() {
+        return DEV_EMAIL_USER + '@' + DEV_EMAIL_DOMAIN;
+    }
+
+    // 填充 .dev-contact 元素：文字 = 标签 + 邮箱，href = mailto
+    function updateDevContact(lang) {
+        var label = (lang === 'zh') ? '开发者：' : 'Developer: ';
+        var addr = devEmail();
+        document.querySelectorAll('.dev-contact').forEach(function (el) {
+            el.textContent = label + addr;
+            el.href = 'mailto:' + addr;
+        });
+    }
+
     // ===== 语言切换 =====
     function switchLanguage(lang) {
         currentLang = lang;
         document.getElementById('languageSelect').value = lang;
         updateTextContent(lang);
         updateAppStoreLinks(lang);
+        updateDevContact(lang);
         updateAllAssets();
         SiteCommon.saveLanguage(lang);
     }
