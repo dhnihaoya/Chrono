@@ -71,11 +71,20 @@
         SiteCommon.setPageLang(lang);
     }
 
+    // 根据当前语言切换 App Store 地区链接
+    function updateAppStoreLinks(lang) {
+        document.querySelectorAll('.app-store-link').forEach(function (link) {
+            var href = link.getAttribute('data-href-' + lang);
+            if (href) link.href = href;
+        });
+    }
+
     // ===== 语言切换 =====
     function switchLanguage(lang) {
         currentLang = lang;
         document.getElementById('languageSelect').value = lang;
         updateTextContent(lang);
+        updateAppStoreLinks(lang);
         updateAllAssets();
         SiteCommon.saveLanguage(lang);
     }

@@ -373,7 +373,8 @@ html[data-preview-theme="dark"] .demo-hero::before {
     height: 58px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 12px;
 }
 
 .demo-brand,
@@ -444,6 +445,7 @@ html[data-preview-theme="dark"] .demo-hero::before {
 .demo-hero h1,
 .demo-bento h2,
 .demo-gallery h2,
+.demo-answers h2,
 .demo-support h2 {
     color: var(--text-primary);
     letter-spacing: 0;
@@ -583,18 +585,21 @@ html[data-preview-theme="dark"] .demo-device-stage::before {
 
 .demo-bento,
 .demo-gallery,
+.demo-answers,
 .demo-support {
     padding: 48px 0;
 }
 
 .demo-bento h2,
 .demo-gallery h2,
+.demo-answers h2,
 .demo-support h2 {
     font-size: 3.1rem;
     font-weight: 800;
 }
 
 .demo-bento-card,
+.demo-answer-card,
 .demo-support-links {
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -640,8 +645,12 @@ html[data-preview-theme="dark"] .demo-section-subtitle {
     order: 2;
 }
 
-.demo-support {
+.demo-answers {
     order: 3;
+}
+
+.demo-support {
+    order: 4;
 }
 
 .demo-bento-grid {
@@ -725,6 +734,28 @@ html[data-preview-theme="dark"] .demo-gallery-scrollbar {
     box-shadow: 0 6px 16px color-mix(in srgb, var(--text-link) 24%, transparent);
     transform: translateX(0);
     transition: width 0.18s ease;
+}
+
+.demo-answer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.demo-answer-card {
+    padding: 24px;
+}
+
+.demo-answer-card h3 {
+    margin-bottom: 10px;
+    color: var(--text-primary);
+    font-size: 1.16rem;
+    line-height: 1.35;
+}
+
+.demo-answer-card p {
+    color: var(--text-secondary);
+    line-height: 1.78;
 }
 
 .demo-support {
@@ -919,12 +950,14 @@ footer p {
 
     .demo-bento,
     .demo-gallery,
+    .demo-answers,
     .demo-support {
         padding: 52px 0;
     }
 
     .demo-bento h2,
     .demo-gallery h2,
+    .demo-answers h2,
     .demo-support h2 {
         font-size: 2.28rem;
     }
@@ -939,6 +972,7 @@ footer p {
     }
 
     .demo-bento-grid,
+    .demo-answer-grid,
     .demo-support-links {
         grid-template-columns: 1fr;
     }

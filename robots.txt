@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dhnihaoya.github.io/Chrono/sitemap.xml
