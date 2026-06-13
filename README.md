@@ -17,7 +17,7 @@
   ·
   <a href="https://apps.apple.com/cn/app/chrono/id6753885021">App Store</a>
   ·
-  <a href="https://github.com/dhnihaoya/ChronoWebsite/issues">反馈问题</a>
+  <a href="https://github.com/dhnihaoya/Chrono/issues">反馈问题</a>
   ·
   <a href="#zh">中文</a>
   ·
@@ -78,7 +78,7 @@ Chrono 是一款面向 iPhone 的时间线任务管理应用。它把待办、�
 
 - 官网：<https://dhnihaoya.github.io/Chrono/>
 - App Store：<https://apps.apple.com/cn/app/chrono/id6753885021>
-- 使用问题、网站错误和功能建议：<https://github.com/dhnihaoya/ChronoWebsite/issues>
+- 使用问题、网站错误和功能建议：<https://github.com/dhnihaoya/Chrono/issues>
 - 技术支持邮箱：<chronoapp@163.com>
 - UI 设计：<1176180038@qq.com>
 
@@ -137,7 +137,7 @@ Screenshots follow the browser's light or dark display preference automatically.
 
 - Website: <https://dhnihaoya.github.io/Chrono/>
 - App Store: <https://apps.apple.com/cn/app/chrono/id6753885021>
-- Questions, website issues, and feature requests: <https://github.com/dhnihaoya/ChronoWebsite/issues>
+- Questions, website issues, and feature requests: <https://github.com/dhnihaoya/Chrono/issues>
 - Support email: <chronoapp@163.com>
 - UI Design: <1176180038@qq.com>
 
