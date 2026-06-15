@@ -6,6 +6,16 @@
 (function () {
     'use strict';
 
+    // 注入 Cloudflare Web Analytics（无 cookie，不追踪个人，仅统计匿名访问量与来源）
+    function initAnalytics() {
+        var s = document.createElement('script');
+        s.defer = true;
+        s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+        s.setAttribute('data-cf-beacon', '{"token": "feedd6b504354cd9a4e81305a0a0b04a"}');
+        document.head.appendChild(s);
+    }
+    initAnalytics();
+
     // 读取 localStorage 中保存的主题并应用
     function initTheme() {
         try {
